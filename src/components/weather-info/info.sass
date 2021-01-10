@@ -26,19 +26,16 @@
 
 .mainTempCircle
   background-color: #2e2e2e
-  height: 150px
-  width: 150px
-  border-radius: 100px
   justify-content: center
   align-items: center
   display: flex
-  margin-right: 70vw
 
 .iconsWeather
   color: linear-gradient(139deg, rgba(230,0,0,1) 0%, rgba(108,20,195,1) 29%, rgba(38,38,38,1) 100%)
 
 .p
   padding: 5px
+  color: #494949
 
 .hourlyContainer
   display: flex
@@ -59,3 +56,58 @@
 .optionsText:hover
   color: #f3f3f3
   font-size: 19px
+
+.dailyContainer
+  width: 16vw
+  border-style: solid
+  border-color: #4b4b4b
+  border-width: 1px
+  border-radius: 5px
+  background: rgba(53, 1, 158, .0)
+  transition: 0.2s linear
+
+.dailyContainer:hover
+  opacity: 1
+  transition: 0.5s linear
+  background: #35019e
+
+.iconnn
+  color: #ffffff
+
+.iconnn:hover
+  opacity: 1
+  transition: 0.5s linear
+  color: #ebdb00
+
+.Hourly
+
+.Hourly:active
+  opacity: .3
+  height: 18vh
+  transition: height 1s ease-in 2s
+  // transition: 0.5s linear
+  background: #35019e
+
+.containerInfoHourly
+  color: #3d3d3d
+  background-color: #2e2e2e
+  display: flex
+  height: 18vh
+  justify-content: center
+  overflow: hidden
+
+.data
+  height: 100px
+
+.data:active
+  height: 0px
+  transition: height 1s
+
+.more-data
+  height: 0px
+  overflow: hidden
+  transition: height .5s
+
+.more-data-open
+  height: 18vh
+  transition: height 1s

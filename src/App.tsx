@@ -18,29 +18,33 @@ function App() {
   const YOUR_API_KEY = '32902a43900f400cae0210316210701'
 
   return (
-    <div className="body">
+    <div>
       <Navbar />
-      <SearchLocation YOUR_API_KEY={YOUR_API_KEY} />
-      <SearchRegion />
 
-      {/* //* TODAY */}
-      <WeatherInfo YOUR_API_KEY={YOUR_API_KEY} />
-      {/* <Home/> */}
+      <div className="body" style={{ width: '50vw', position: 'absolute', right: '25%' }}>
+        <SearchLocation YOUR_API_KEY={YOUR_API_KEY} />
+        <SearchRegion />
 
-      {/* //*HOURLY */}
-      <Hourly1Weather YOUR_API_KEY={YOUR_API_KEY} />
+        {/* //* TODAY */}
+        <WeatherInfo YOUR_API_KEY={YOUR_API_KEY} />
+        {/* <Home/> */}
 
-
-
-
-      {/* //*DAILY */}
-      {/* <div style={{ backgroundColor: '#2e2e2e' }}>
+        {/* //*DAILY */}
         <MinuteGraph YOUR_API_KEY={YOUR_API_KEY} />
-        <WeatherGraph />
 
+        {/* //*HOURLY */}
+        <Hourly1Weather YOUR_API_KEY={YOUR_API_KEY} />
+
+
+
+
+        {/* <div style={{ backgroundColor: '#2e2e2e' }}>
+        <WeatherGraph />
+        
         <Hourly3Graph API_key={API_key} />
         <DailyWeather API_key={API_key} />
       </div> */}
+      </div>
     </div>
   )
 }
