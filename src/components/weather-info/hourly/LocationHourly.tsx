@@ -12,6 +12,7 @@ function LocationHourly({ item, id, setListOpenById, listOpenById }) {
       <div onClick={() => listOpenById === id ? setListOpenById(null) : setListOpenById(id)} style={{ display: 'flex', background: '#262626', border: 1, borderStyle: 'solid', borderColor: '#6a6a6a', borderLeft: 'none', height: 100, alignItems: 'center', }}>
         <p style={{ width: 50, margin: 15, textAlign: 'start' }}>{time[id]}</p>
         <WiDayRainMix className='iconsWeather' style={{ width: 80 }} size={60} color='#6e0283' />
+        {/* <div>{item.condition.icon}</div> */}
         <p style={{ marginLeft: 10, fontSize: 40, width: 100, textAlign: 'start', fontFamily: 'Nunito-bold' }}>{item.temp_f}F°</p>
         <p style={{ width: 200, textAlign: 'center', fontSize: 14, color: '#525252' }}>Feels Like {item.feelslike_f}F°</p>
         <p style={{ width: 120, textAlign: 'start', fontSize: 20 }}>{item.condition.text}</p>
