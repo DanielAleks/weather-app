@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BsCloud } from 'react-icons/bs'
+import DailyInfo from './info/DailyInfo'
 import './x-daily.sass'
 
 function Daily({ YOUR_API_KEY }) {
@@ -26,38 +27,19 @@ function Daily({ YOUR_API_KEY }) {
 
 
   return (
-    <div style={{ marginTop: '10vh', marginBottom: '10vh' }}>
-
-      <p style={{ textAlign: 'center', fontFamily: 'Nunito-bold', fontSize: 30, padding: 20 }}>The Next Three Days...</p>
-      <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: 100 }}>
+    <div className='daily-position'>
+      <p className='daily-top-header'>The Next Three Days...</p>
+      
+      <div className='daily-outer-container'>
         {weatherForecast.map((item) =>
-          <div className='dailyContainer'>
-            <div style={{ textAlign: 'center', paddingBottom: 20 }}>
-              <p style={{ fontFamily: 'Nunito-bold', fontSize: 25, paddingTop: 20 }}>{item.date}</p>
-              <BsCloud className='iconnn' size={40} />
+          <div className='daily-container'>
+            <div className='daily-header'>
+              <p className='daily-date'>{item.date}</p>
+              <BsCloud className='daily-icon' size={40} />
               <p>{item.day.condition.text}</p>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: '10vw' }}>
-                <p className='p'>Humidity:</p>
-                <p className='p'>Visability:</p>
-                <p className='p'>Min:</p>
-                <p className='p'>Max:</p>
-                <p className='p'>Rain:</p>
-                <p className='p'>Wind Speed:</p>
-                <p className='p'>Precipitation:</p>
-              </div>
 
-              <div style={{ textAlign: 'end' }}>
-                <p className='p'>{item.day.avghumidity}%</p>
-                <p className='p'>{item.day.avgvis_miles} miles</p>
-                <p className='p'>{item.day.mintemp_f}F°</p>
-                <p className='p'>{item.day.maxtemp_f}F°</p>
-                <p className='p'>{item.day.daily_chance_of_rain}%</p>
-                <p className='p'>{item.day.maxwind_mph}mph</p>
-                <p className='p'>{item.day.totalprecip_in}in.</p>
-              </div>
-            </div>
+            <DailyInfo item={item} />
           </div>
         )}
       </div>
