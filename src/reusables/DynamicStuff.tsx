@@ -1,7 +1,3 @@
-import { BsCloud } from 'react-icons/bs';
-import '../App.css';
-import '.././components/current-location/current.sass'
-
 export interface HomeDailyWeatherT {
   day, weather, icon
 }
@@ -14,6 +10,3 @@ export const HomeDailyWeather = ({ weatherData }: { weatherData: HomeDailyWeathe
     </div>
   )
 }
-
-
-

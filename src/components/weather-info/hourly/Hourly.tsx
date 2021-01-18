@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { isAsExpression } from 'typescript';
-import LocationHourly from './components/LocationHourly';
+import { Day, DaySelected } from '../../../reusables/DynHourly';
 
 function Hourly({ YOUR_API_KEY }) {
   const [weatherLocationToday, setWeatherLocationToday]: any = useState([])
@@ -18,78 +17,80 @@ function Hourly({ YOUR_API_KEY }) {
     setWeatherLocationToday(data.forecast.forecastday[0].hour)
     setWeatherLocationTom(data.forecast.forecastday[1].hour)
     setWeatherLocationNext(data.forecast.forecastday[2].hour)
-    setWeatherLocationDate(data.forecast.forecastday[accessor])
-    console.log(data, 'dsffffffffffffffffffff')
+    setWeatherLocationDate(data.forecast.forecastday[accessor].date)
   }
 
   useEffect(() => {
     weather()
   }, [])
 
+  const dayData = [
+    {
+      state: weatherLocationToday,
+      number: 0,
+    },
+    {
+      state: weatherLocationTom,
+      number: 1,
+    },
+    {
+      state: weatherLocationNext,
+      number: 2,
+    }
+  ]
+
+  const selData = [
+    {
+      day: 'Today',
+      number: 0
+    },
+    {
+      day: 'Tomorrow',
+      number: 1
+    },
+    {
+      day: 'Day After',
+      number: 2
+    },
+  ]
+
+
   return (
     <div className='backgroundContainer'>
-      <div>
-        <div className='hourlyContainer' style={{ textAlign: 'center' }}>
-          <div>
-            <p className={`optionsText ${accessor === 0 ? 'optionsOn' : 'optionsText'}`} onClick={() => setAccessor(0)}>Today</p>
-            <hr color={`#9b9b9b ${accessor === 0 ? '#000000' : '#828282'}`} className={`lineOff ${accessor === 0 ? 'lineOn' : 'lineOff'}`} />
-            <p className={`textBelow ${accessor === 0 ? 'textOn' : 'textBelow'}`}>{weatherLocationDate.date}</p>
-          </div>
-          <div>
-            <p className={`optionsText ${accessor === 1 ? 'optionsOn' : 'optionsText'}`} onClick={() => setAccessor(1)}>Tomorrow</p>
-            <hr color={`#9b9b9b ${accessor === 1 ? '#000000' : '#828282'}`} className={`lineOff ${accessor === 0 ? 'lineOn' : 'lineOff'}`} />
-            <p className={`textBelow ${accessor === 1 ? 'textOn' : 'textBelow'}`}>{weatherLocationDate.date}</p>
-          </div>
-          <div>
-            <p className={`optionsText ${accessor === 2 ? 'optionsOn' : 'optionsText'}`} onClick={() => setAccessor(2)}>Day After</p>
-            <hr color={`#9b9b9b ${accessor === 2 ? '#000000' : '#828282'}`} className={`lineOff ${accessor === 0 ? 'lineOn' : 'lineOff'}`} />
-            <p className={`textBelow ${accessor === 2 ? 'textOn' : 'textBelow'}`}>{weatherLocationDate.date}</p>
-          </div>
-        </div>
+      <div className='hourlyContainer' >
+        <DaySelected
+          selData={selData[0]}
+          setAccessor={setAccessor}
+        />
+        <DaySelected
+          selData={selData[1]}
+          setAccessor={setAccessor}
+        />
+        <DaySelected
+          selData={selData[2]}
+          setAccessor={setAccessor}
+        />
       </div>
 
-      <div className='hourlyContainer' style={{ display: accessor === 0 ? 'flex' : 'none' }}>
-        <div>
-          {weatherLocationToday.map((item, id) =>
-            <LocationHourly
-              item={item}
-              id={id}
-              setListOpenById={setListOpenById}
-              listOpenById={listOpenById}
-            />
-          )}
-        </div>
-      </div>
-
-
-      <div className='hourlyContainer' style={{ display: accessor === 1 ? 'flex' : 'none' }}>
-        <div>
-          {weatherLocationTom.map((item, id) =>
-            <LocationHourly
-              item={item}
-              id={id}
-              setListOpenById={setListOpenById}
-              listOpenById={listOpenById}
-            />
-          )}
-        </div>
-      </div>
-
-
-      <div className='hourlyContainer' style={{ display: accessor === 2 ? 'flex' : 'none' }}>
-        <div>
-          {weatherLocationNext.map((item, id) =>
-            <LocationHourly
-              item={item}
-              id={id}
-              setListOpenById={setListOpenById}
-              listOpenById={listOpenById}
-            />
-          )}
-        </div>
-      </div>
+      <Day
+        dayData={dayData[0]}
+        accessor={accessor}
+        setListOpenById={setListOpenById}
+        listOpenById={listOpenById}
+      />
+      <Day
+        dayData={dayData[1]}
+        accessor={accessor}
+        setListOpenById={setListOpenById}
+        listOpenById={listOpenById}
+      />
+      <Day
+        dayData={dayData[2]}
+        accessor={accessor}
+        setListOpenById={setListOpenById}
+        listOpenById={listOpenById}
+      />
     </div >
-
   )
 }
 
