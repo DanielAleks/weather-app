@@ -60,7 +60,7 @@ function Current({ YOUR_API_KEY }) {
           <p style={{ fontSize: 40, textAlign: 'center', padding: '2vh', fontFamily: 'Nunito-bold' }}>Today</p>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10 }}>
 
-            <div style={{width: '9vw'}}>
+            <div style={{ width: '9vw' }}>
               <div>
                 <p className='p'>Humidity:</p>
                 <p className='p'>Precipitation:</p>
@@ -102,14 +102,6 @@ function Current({ YOUR_API_KEY }) {
           </div>
         </div>
       </div>
-
-
-
-
-
-      {/*//* need the other API <p style={{}}>Tonight: {} /</p>
-        <p style={{}}>Tomorrow: </p> */}
-
     </div>
   )
 }

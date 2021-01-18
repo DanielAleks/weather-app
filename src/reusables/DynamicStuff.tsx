@@ -15,16 +15,5 @@ export const HomeDailyWeather = ({ weatherData }: { weatherData: HomeDailyWeathe
   )
 }
 
-export interface DataPointT {
-  time, degrees, icon
-}
-export const DataPoint = ({ weatherPoint }: { weatherPoint: DataPointT }) => {
-  return (
-    <div className='divInfoIcons'>
-      <p className="timeStyle">{weatherPoint.time}</p>
-      <weatherPoint.icon size={25} color='#f8e009' className='infoIcons' />
-      <p className="degreesStyle">{weatherPoint.degrees}</p>
-    </div>
-  )
-}
+
 

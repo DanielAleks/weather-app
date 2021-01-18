@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { isAsExpression } from 'typescript';
-import LocationHourly from './LocationHourly';
+import LocationHourly from './components/LocationHourly';
 
 function Hourly({ YOUR_API_KEY }) {
   const [weatherLocationToday, setWeatherLocationToday]: any = useState([])
