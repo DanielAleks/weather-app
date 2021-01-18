@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './x-imgSection.sass'
 
-function SearchBar({ YOUR_API_KEY }) {
+function SearchBar({ YOUR_API_KEY, city }) {
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
 
   const commonNames = `http://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=Washi`
-  const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=London`
+  const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
 
   async function weather() {
     const fetchedWeatherData = await fetch(current)
@@ -17,16 +17,16 @@ function SearchBar({ YOUR_API_KEY }) {
 
   useEffect(() => {
     weather()
-  }, [])
+  }, [city])
   
   return (
     <div className="top-image">
       <div className="image-bg">
 
         <div className='top-container'>
-          <p className='top-name'>{weatherLocation.name}</p>
-          <p className='top-local'>{weatherLocation.localtime}</p>
-          <p className='top-temp'>{weatherCurrent.temp_f}F°</p>
+          <p className='top-name'>{weatherLocation && weatherLocation.name}</p>
+          <p className='top-local'>{weatherLocation && weatherLocation.localtime}</p>
+          <p className='top-temp'>{weatherLocation && weatherCurrent.temp_f}F°</p>
         </div>
       </div>
     </div>

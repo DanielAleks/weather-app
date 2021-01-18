@@ -1,21 +1,28 @@
 import React from 'react'
 import { BsCloud } from 'react-icons/bs'
-import './nav.sass'
+import './x-nav.sass'
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Navbar() {
   return (
-    <div className="navBar"> 
+    <div className="navBar">
       <div className='project-restrictions'>
-  
+
         <div className='nav-items'>
-          <div style={{display: 'flex'}}>
+          <div style={{ display: 'flex' }}>
             <BsCloud size='30' color='#971414' strokeWidth='.5' />
             <p className='nav-header'>QuickWeather</p>
           </div>
           <div className='buttonContainer'>
-            <button>Today</button>
-            <button>Hourly</button>
-            <button>Daily</button>
+            <Link className='scroll-link' to="Today" spy={true} smooth={true} offset={-100} duration={500}>
+              Today
+          </Link>
+            <Link className='scroll-link' to="Hourly" spy={true} smooth={true} offset={-100} duration={500}>
+              Hourly
+          </Link>
+            <Link className='scroll-link' to="Daily" spy={true} smooth={true} offset={-250} duration={500}>
+              Daily
+          </Link>
           </div>
         </div>
 
