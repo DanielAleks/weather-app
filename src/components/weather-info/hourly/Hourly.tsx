@@ -7,7 +7,7 @@ function Hourly({ YOUR_API_KEY }) {
   const [weatherLocationNext, setWeatherLocationNext]: any = useState([])
   const [weatherLocationDate, setWeatherLocationDate]: any = useState([])
   const [listOpenById, setListOpenById] = useState<number>(null)
-  const [accessor, setAccessor] = useState(0)
+  const [accessor, setAccessor] = useState(0) 
 
   const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
 

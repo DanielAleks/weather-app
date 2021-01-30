@@ -4,7 +4,7 @@ import '../components/weather-info/hourly/x-hourly.sass'
 export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) => {
   return (
     <div className='hourlyContainer' style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
-      <div>
+      <div> 
         {dayData.state.map((item, id) =>
           <OverviewData
             item={item}

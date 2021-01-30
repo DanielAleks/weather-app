@@ -17,7 +17,7 @@ function OpenedData({ item }) {
           <p>{item.dewpoint_f}F°</p>
           <p>{item.gust_mph}mph</p>
           <p>{item.heatindex_f}F°</p>
-          <p>{item.humidity}%</p>
+          <p>{item.humidity}%</p> 
           <p>{item.precip_in}in.</p>
         </div>
       </div>
