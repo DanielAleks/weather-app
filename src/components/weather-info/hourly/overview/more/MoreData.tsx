@@ -1,9 +1,9 @@
 import React from 'react'
 import './x-more.sass'
 
-function OpenedData({ item }) {
+function OpenedData({ item }) { 
   return (
-    <div className='containerInfoHourly'>
+    <div className='containerInfoHourly'> 
       <div className='first-data-container'>
         <div style={{ width: 200 }}>
           <p >DewPoint: </p>

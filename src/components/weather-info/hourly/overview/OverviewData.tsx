@@ -15,30 +15,30 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
   ]
 
   return (
-    <div key={id} style={{ marginBottom: 10 }}>
+    <div key={id} className='hour-container-center'>
       <div
         className='overview-container'
-        onClick={() => 
+        onClick={() =>
           listOpenById === id ?
             setListOpenById(null) :
             setListOpenById(id)}
       >
-        <p className='o-time'>{time[id]}</p> 
-        <WiDayRainMix className='iconsWeather' size={60}/>
+        <p className='o-time'>{time[id]}</p>
+        <WiDayRainMix className='iconsWeather' size={60} />
         {/* <div>{item.condition.icon}</div> */}
         <p className='o-temp'>{item.temp_f}F°</p>
         <p className='o-feelslike'>Feels Like {item.feelslike_f}F°</p>
-        <p className='o-text'>{item.condition.text}</p> 
+        <p className='o-text'>{item.condition.text}</p>
         <p className='o-rain'>{item.chance_of_rain}% <ImDroplet /></p>
       </div>
 
-      <div
+      {/* <div
         className={`more-data ${listOpenById === id ?
           'more-data-open' : 'more-data'}`}>
 
-        {/* //* On open */} 
+        //* On open 
         <MoreData item={item} />
-      </div>
+      </div> */}
     </div>
   )
 }
