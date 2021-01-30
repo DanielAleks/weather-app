@@ -2,6 +2,51 @@
   display: flex
   justify-content: center
 
+.daily-info-p
+  text-align: end
+
+.daily-items-width
+  width: 10vw
+
 p
   padding: 5px
   color: #494949
+
+@media (max-width: 1000px)
+  .daily-items-width
+    width: 100%
+    padding-bottom: 10px
+    p
+      padding-top: 0px
+      padding-bottom: 0px
+      font-size: 12px
+
+  .daily-info-p
+    p
+      padding-top: 0px
+      padding-bottom: 0px
+      font-size: 12px
+
+@media (max-width: 700px)
+  .daily-items-width
+    width: 100%
+    p
+      padding-top: 0px
+      padding-bottom: 0px
+      font-size: 12px
+
+  .daily-info-p
+    p
+      padding-top: 0px
+      padding-bottom: 0px
+      font-size: 12px
+
+@media (max-width: 500px)
+  .daily-items-width
+    width: 40vw
+    p
+      padding: 1px
+
+  .daily-info-p
+    p
+      padding: 1px

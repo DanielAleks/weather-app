@@ -48,7 +48,7 @@ function Daily({ YOUR_API_KEY }) {
           <div className='daily-container'>
             <div className='daily-header'>
               <p className='daily-date'>{item.date}</p>
-              <BsCloud className='daily-icon' size={40} />
+              <BsCloud color='white' size={40} />
               <p>{item.day.condition.text}</p>
             </div>
 

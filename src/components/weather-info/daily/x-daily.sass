@@ -20,7 +20,7 @@
   border-color: #4b4b4b
   border-width: 1px
   border-radius: 5px
-  width: 16vw
+  width: 18vw
 
 .daily-container:hover
   transition: 0.5s linear
@@ -31,15 +31,24 @@
   text-align: center
   padding-bottom: 20px
 
-.daily-icon
-  color: #ffffff
-
-.daily-icon:hover
-  transition: 0.5s linear
-  opacity: 1
-  color: #ebdb00
-
 .daily-date
   padding-top: 20px
   font-size: 25px
   font-family: Nunito-bold
+
+@media (max-width: 800px)
+  .daily-container
+    width: 23vw
+
+@media (max-width: 700px)
+  .daily-container
+    width: 30vw
+    padding-bottom: 20px
+
+@media (max-width: 500px)
+  .daily-outer-container
+    flex-direction: column
+
+  .daily-container
+    width: 100vw
+    padding-bottom: 20px

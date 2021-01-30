@@ -7,7 +7,7 @@ function OpenedData({ item }) {
       <div className='first-data-container'>
         <div style={{ width: 200 }}>
           <p >DewPoint: </p>
-          <p>Gust: </p>
+          <p>Gust: </p> 
           <p>Heat Index: </p>
           <p >Humidity: </p>
           <p >Precipitation: </p>

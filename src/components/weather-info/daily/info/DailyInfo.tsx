@@ -4,7 +4,7 @@ import './o-dailyInfo.sass'
 function DailyInfo({item}) {
   return (
     <div className='info-container'>
-      <div style={{ width: '10vw' }}>
+      <div className='daily-items-width'>
         <p>Humidity:</p>
         <p>Visability:</p>
         <p>Min:</p>
@@ -12,11 +12,11 @@ function DailyInfo({item}) {
         <p>Rain:</p>
         <p>Wind Speed:</p>
         <p>Precipitation:</p> 
-      </div>
+      </div> 
 
-      <div style={{ textAlign: 'end' }}>
+      <div className='daily-info-p'>
         <p>{item.day.avghumidity}%</p>
-        <p>{item.day.avgvis_miles} miles</p>
+        <p>{item.day.avgvis_miles}miles </p>
         <p>{item.day.mintemp_f}F°</p>
         <p>{item.day.maxtemp_f}F°</p>
         <p>{item.day.daily_chance_of_rain}%</p>
