@@ -28,7 +28,7 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
           ref={inputRef}
           onClick={() => setIsModal(true)}
           className='long-input'
-          placeholder='enter city'
+          placeholder='enter city' 
           onChange={(e) => setCity(e.target.value)}
         />
         <button ref={buttonRef} onClick={() => {
