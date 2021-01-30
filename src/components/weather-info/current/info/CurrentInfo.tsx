@@ -8,7 +8,7 @@ function CurrentInfo({ weatherCurrent, weatherPhase }) {
         <p>{weatherCurrent && weatherCurrent.humidity}%</p>
         <p>{weatherCurrent && weatherCurrent.precip_in}in.</p>
         <p>{weatherCurrent && weatherCurrent.gust_mph}mph</p>
-        <p>{weatherCurrent && weatherCurrent.pressure_in} in.</p>
+        <p>{weatherCurrent && weatherCurrent.pressure_in} in.</p> 
         <p>{weatherCurrent && weatherCurrent.vis_miles} miles</p>
         <p>
           {weatherCurrent && weatherCurrent.wind_degree}°

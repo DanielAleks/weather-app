@@ -3,13 +3,13 @@ import './x-currentInfo.sass'
 
 function CurrentTitle() {
   return (
-    <div style={{ width: '9vw' }}>
+    <div className='current-info-words'>
       <div>
         <p>Humidity:</p>
         <p>Precipitation:</p>
         <p>Gust:</p>
         <p>Pressure:</p>
-        <p>Visability:</p>
+        <p>Visability:</p> 
         <p>Wind Direction:</p>
         <p>Wind Speed:</p>
         {/* <p>Description:</p> */}

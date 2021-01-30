@@ -9,7 +9,7 @@ function Current({ YOUR_API_KEY, city }) {
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [weatherForcast, setWeatherForcast]: any = useState([])
   const [weatherPhase, setWeatherPhase]: any = useState([])
-
+ 
   const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
   const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
 
@@ -35,8 +35,8 @@ function Current({ YOUR_API_KEY, city }) {
 
     <div className='current-section' id='Today'>
       <Circle weatherCurrent={weatherCurrent} />
-
-      <div className='current-container'>
+ 
+      <div className='current-container'> 
         <p className='current-header'>Today</p>
         <div className='current-info'>
           <CurrentTitle />

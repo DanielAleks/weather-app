@@ -22,7 +22,7 @@ function Hourly({ YOUR_API_KEY }) {
 
   useEffect(() => {
     weather()
-  }, [])
+  }, []) 
 
   const dayData = [
     { state: weatherLocationToday, number: 0 },
