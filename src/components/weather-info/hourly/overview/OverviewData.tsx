@@ -24,16 +24,11 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
             setListOpenById(id)}
       >
         <p className='o-time'>{time[id]}</p>
-        <WiDayRainMix
-          className='iconsWeather'
-          style={{ width: 80 }}
-          size={60}
-          color='#6e0283'
-        />
+        <WiDayRainMix className='iconsWeather' size={60}/>
         {/* <div>{item.condition.icon}</div> */}
         <p className='o-temp'>{item.temp_f}F°</p>
         <p className='o-feelslike'>Feels Like {item.feelslike_f}F°</p>
-        <p className='o-text'>{item.condition.text}</p>
+        <p className='o-text'>{item.condition.text}</p> 
         <p className='o-rain'>{item.chance_of_rain}% <ImDroplet /></p>
       </div>
 
