@@ -13,12 +13,10 @@ function Current({ YOUR_API_KEY, city }) {
   const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
   const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
 
-
   async function weather() {
     const fetchedWeatherData = await fetch(current)
     const data = await fetchedWeatherData.json()
     setWeatherCurrent(data.current)
-    console.log(data, 'Today Today Today Today Today')
   }
 
   async function weather2nd() {
@@ -26,13 +24,11 @@ function Current({ YOUR_API_KEY, city }) {
     const data = await fetchedWeatherData.json()
     setWeatherForcast(data.forecast.current)
     setWeatherPhase(data.forecast.forecastday[0].astro)
-    console.log(data, 'SCSCSCCSSCCSSCSCSCS')
   }
 
   useEffect(() => {
     weather()
     weather2nd()
-    // weather2nd()
   }, [])
 
   return (

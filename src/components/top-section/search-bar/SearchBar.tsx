@@ -36,7 +36,7 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
         }}>search</button>
       </div>
 
-      {area.length <= 3 &&
+      {/* {area.length <= 3 &&
         <p className='error-length'>not enough letters</p>}
 
       <div className='input-dropdown'>
@@ -50,9 +50,9 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
               className='possible-locations-btn'>
               {item.name}
             </div>
-          )}
-      </div>
-    </div>
+          )} */}
+    {/* </div> */}
+    </div >
   )
 }
 
