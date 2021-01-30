@@ -25,71 +25,37 @@ function Hourly({ YOUR_API_KEY }) {
   }, [])
 
   const dayData = [
-    {
-      state: weatherLocationToday,
-      number: 0,
-    },
-    {
-      state: weatherLocationTom,
-      number: 1,
-    },
-    {
-      state: weatherLocationNext,
-      number: 2,
-    }
+    { state: weatherLocationToday, number: 0 },
+    { state: weatherLocationTom, number: 1 },
+    { state: weatherLocationNext, number: 2 }
   ]
 
   const selData = [
-    {
-      day: 'Today',
-      number: 0
-    },
-    {
-      day: 'Tomorrow',
-      number: 1
-    },
-    {
-      day: 'Day After',
-      number: 2
-    },
+    { day: 'Today', number: 0 },
+    { day: 'Tomorrow', number: 1 },
+    { day: 'Day After', number: 2 },
   ]
 
 
   return (
     <div className='backgroundContainer' id='Hourly'>
       <div className='hourlyContainer'>
-        <DaySelected
-          selData={selData[0]}
-          setAccessor={setAccessor}
-        />
-        <DaySelected
-          selData={selData[1]}
-          setAccessor={setAccessor}
-        />
-        <DaySelected
-          selData={selData[2]}
-          setAccessor={setAccessor}
-        />
+        {selData.map((item) =>
+          <DaySelected
+            selData={item}
+            setAccessor={setAccessor}
+          />
+        )}
       </div>
 
-      <Day
-        dayData={dayData[0]}
-        accessor={accessor}
-        setListOpenById={setListOpenById}
-        listOpenById={listOpenById}
-      />
-      <Day
-        dayData={dayData[1]}
-        accessor={accessor}
-        setListOpenById={setListOpenById}
-        listOpenById={listOpenById}
-      />
-      <Day
-        dayData={dayData[2]}
-        accessor={accessor}
-        setListOpenById={setListOpenById}
-        listOpenById={listOpenById}
-      />
+      {dayData.map((item) =>
+        <Day
+          dayData={item}
+          accessor={accessor}
+          setListOpenById={setListOpenById}
+          listOpenById={listOpenById}
+        />
+      )}
     </div >
   )
 }

@@ -44,7 +44,7 @@ function Daily({ YOUR_API_KEY }) {
       <p className='daily-top-header'>The Next Three Days...</p>
 
       <div className='daily-outer-container'>
-        {weatherForecast.map((item) =>
+        {weatherForecast && weatherForecast.map((item) =>
           <div className='daily-container'>
             <div className='daily-header'>
               <p className='daily-date'>{item.date}</p>

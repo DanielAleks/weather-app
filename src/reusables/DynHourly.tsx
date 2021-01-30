@@ -21,9 +21,23 @@ export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) =
 export const DaySelected = ({ selData, accessor, setAccessor, weatherLocationDate }: any) => {
   return (
     <div >
-      <p className={`optionsText ${accessor === selData.number ? 'optionsOn' : 'optionsText'}`} onClick={() => setAccessor(selData.number)}>{selData.day}</p>
-      <hr color={`#9b9b9b ${accessor === selData.number ? '#000000' : '#828282'}`} className={`lineOff ${accessor === selData.number ? 'lineOn' : 'lineOff'}`} />
-      <p className={`textBelow ${accessor === selData.number ? 'textOn' : 'textBelow'}`}>{weatherLocationDate}</p>
+      <p
+        className={`optionsText ${accessor === selData.number ?
+          'optionsOn' : 'optionsText'}`}
+        onClick={() => setAccessor(selData.number)}>
+        {selData.day}
+      </p>
+      <hr
+        color={`#9b9b9b ${accessor === selData.number ?
+          '#000000' : '#828282'}`}
+        className={`lineOff ${accessor === selData.number ?
+          'lineOn' : 'lineOff'}`}
+      />
+      <p
+        className={`textBelow ${accessor === selData.number ?
+          'textOn' : 'textBelow'}`}>
+        {weatherLocationDate}
+      </p>
     </div>
   )
 }
