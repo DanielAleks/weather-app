@@ -8,7 +8,7 @@ function OpenedData({ item }) {
         <div className='first-text'>
           <p className='more-p'>DewPoint: </p>
           <p className='more-p'>Gust: </p> 
-          <p className='more-p'>Heat Index: </p>
+          <p className='more-p'>Ht-Index: </p>
           <p className='more-p'>Humidity: </p>
           <p className='more-p'>Precipitation: </p>
         </div>
@@ -31,7 +31,7 @@ function OpenedData({ item }) {
           <p className='more-p'>Pressure: </p>
         </div>
         <div className='second-data'>
-          <p className='more-p'>{item.vis_miles} miles</p>
+          <p className='more-p'>{item.vis_miles}miles</p>
           <p className='more-p'>{item.wind_degree}° {item.wind_dir}</p>
           <p className='more-p'>{item.wind_mph}mph</p>
           <p className='more-p'>{item.windchill_f}F°</p>

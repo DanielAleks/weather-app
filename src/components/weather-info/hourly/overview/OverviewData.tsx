@@ -24,7 +24,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
             setListOpenById(id)}
       >
         <p className='o-time'>{time[id]}</p>
-        <WiDayRainMix className='iconsWeather' size={60} />
+        <WiDayRainMix className='iconsWeather' size={40} />
         {/* <div>{item.condition.icon}</div> */}
         <p className='o-temp'>{item.temp_f}F°</p>
         <p className='o-feelslike'>Feels Like {item.feelslike_f}F°</p>
@@ -36,7 +36,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
         className={`more-data ${listOpenById === id ?
           'more-data-open' : 'more-data'}`}>
 
-        {/* //* On open  */}
+        {/* //* On open  */} 
         <MoreData item={item} />
       </div>
     </div>
