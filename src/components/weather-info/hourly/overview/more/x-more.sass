@@ -1,6 +1,6 @@
 .containerInfoHourly
   color: #cccccc
-  background-color: #9c2828
+  background-color: #2b2a2a
   display: flex
   height: 18vh
   width: 100%
@@ -15,13 +15,38 @@
 .second-data-container
   display: flex
   justify-content: center
-  margin: 10px 
+  margin: 10px
   width: 100%
 
-p
-  padding: 5px
-  color: #494949
+.first-text
+  text-align: start
+  width: 100px
 
-// @media (max-width: 600px)
-//   .containerInfoHourly
-//     width: 100%
+.first-data
+  text-align: end
+
+.second-text
+  text-align: start
+  width: 100px
+
+.second-data
+  text-align: end
+
+.more-p
+  padding: 5px
+  color: #8b8b8b
+
+@media (max-width: 600px)
+  .containerInfoHourly
+    flex-direction: column
+    justify-content: flex-start
+    height: 100%
+
+  .first-data-container
+    margin-top: 0px
+  .second-data-container
+    width: 100%
+    margin: 0px
+  .more-p
+    padding: 0px
+    font-size: 12px
