@@ -37,10 +37,9 @@ function Hourly({ YOUR_API_KEY }) {
     { day: 'Day After', number: 2 },
   ]
 
-
   return (
-    <div>
-      <div className='hourlyContainerOuter' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div id='Hourly'>
+      <div className='hourlyContainerOuter'>
         {selData.map((item) =>
           <DaySelected
             selData={item}

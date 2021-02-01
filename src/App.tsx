@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div>
+      <div className='image-ult-bg' />
       <Index />
     </div>
   )
