@@ -56,7 +56,20 @@ p
 .image-ult-bg
   background-image: url('./assets/images/blueCool.jpg')
   position: absolute
-  height: 500vh
+  background: #000
+  height: 3200px
   width: 100%
   filter: saturate(.6) opacity(.08)
   background-size: cover
+
+@media (max-width: 600px)
+  .image-ult-bg
+    height: 3000px
+
+@media (max-width: 400px)
+  .image-ult-bg
+    height: 3700px
+
+@media (max-height: 300px)
+  .image-ult-bg
+    height: 3400px

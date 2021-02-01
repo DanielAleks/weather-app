@@ -30,13 +30,13 @@ function Hourly({ YOUR_API_KEY }) {
     { state: weatherLocationTom, number: 1 },
     { state: weatherLocationNext, number: 2 }
   ]
-
+ 
   const selData = [
     { day: 'Today', number: 0 },
     { day: 'Tomorrow', number: 1 },
     { day: 'Day After', number: 2 },
   ]
-
+ 
   return (
     <div id='Hourly'>
       <div className='hourlyContainerOuter'>
@@ -52,6 +52,7 @@ function Hourly({ YOUR_API_KEY }) {
         <Day
           dayData={item}
           accessor={accessor}
+          setAccessor={setAccessor}
           setListOpenById={setListOpenById}
           listOpenById={listOpenById}
         />

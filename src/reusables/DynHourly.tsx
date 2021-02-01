@@ -1,8 +1,9 @@
 import OverviewData from '../components/weather-info/hourly/overview/OverviewData';
 import '../components/weather-info/hourly/x-hourly.sass'
 
-export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) => {
+export const Day = ({ dayData, setAccessor, accessor, setListOpenById, listOpenById }: any) => {
   return (
+    // onClick={() => setAccessor(0)}
     <div className='hourlyContainer' style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
       <div>
         {dayData.state.map((item, id) =>
@@ -28,10 +29,7 @@ export const DaySelected = ({ selData, accessor, setAccessor, weatherLocationDat
         {selData.day}
       </p>
       <hr
-        color={`#9b9b9b ${accessor === selData.number ?
-          '#000000' : '#828282'}`}
-        className={`lineOff ${accessor === selData.number ?
-          'lineOn' : 'lineOff'}`}
+        className={accessor === 1 ? 'lineOff' : 'lineOn'}
       />
       <p
         className={`textBelow ${accessor === selData.number ?

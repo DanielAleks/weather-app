@@ -14,30 +14,9 @@ function Daily({ YOUR_API_KEY }) {
     setWeatherForecast(data.forecast.forecastday)
   }
 
-  // let days = ['']
-
-  // const locale = {
-  //   localize: {
-  //     month: n => months[n],
-  //     day: n => days[n]
-  //   }
-  // }
-  // let c = locale.getInstance()
-  // let closer = c.setTime(23 / 2 / 2010);
-  // let me = closer.get(Calendar.DAY_OF_WEEK);
-
-
-  // let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  // let d = new Date(weatherForecast.date);
-  // let dayName = days[d.getDay()]
-  // console.log(dayName, 'dayName')
-  // console.log(d, 'd')
-
-
   useEffect(() => {
     weather()
   }, [])
-
 
   return (
     <div className='daily-position' id='Daily'>
@@ -48,7 +27,7 @@ function Daily({ YOUR_API_KEY }) {
           <div className='daily-container'>
             <div className='daily-header'>
               <p className='daily-date'>{item.date}</p>
-              <BsCloud color='white' size={40} />
+              <BsCloud color='white' size={40} /> 
               <p>{item.day.condition.text}</p>
             </div>
 

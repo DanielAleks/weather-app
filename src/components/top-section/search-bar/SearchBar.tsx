@@ -23,7 +23,7 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
     <div className='search-container' >
       <div className='button--input'>
         <input
-          type="text"
+          type="text" 
           value={city}
           ref={inputRef}
           onClick={() => setIsModal(true)}

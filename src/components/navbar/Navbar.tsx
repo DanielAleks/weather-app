@@ -28,7 +28,7 @@ function Navbar(props) {
   return (
     <div className="navBar">
       <div className='project-restrictions'>
-        <div className='nav-items'>
+        <div className='nav-items'> 
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <BsCloud
               strokeWidth='.5'
