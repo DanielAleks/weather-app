@@ -19,7 +19,7 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
   useEffect(() => {
     focusInput(inputRef)
   }, [])
-
+ 
   return (
     <div className='search-container' >
       <div className='button--input'>

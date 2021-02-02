@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MoreData from './more/MoreData'
 import { ImDroplet } from 'react-icons/im'
 import { WiDayRainMix } from 'react-icons/wi'
@@ -6,6 +6,8 @@ import './x-overview.sass'
 import './x-oItems.sass'
 
 function OverviewData({ item, id, setListOpenById, listOpenById }) {
+  const [neverDisplay, setNeverDisplay] = useState(false)
+
 
   const time = [
     '12AM', '1AM', '2AM', '3AM', '4AM', '5AM',
@@ -24,8 +26,10 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
             setListOpenById(id)}
       >
         <p className='o-time'>{time[id]}</p>
-        <WiDayRainMix className='iconsWeather' size={40} />
-        {/* <div>{item.condition.icon}</div> */}
+        <div className='iconsWeather'>
+          <img src={item.condition.icon} className='o-icon' alt="weather icon" />
+        </div>
+        <WiDayRainMix className='iconsWeather' size={1} />
         <p className='o-temp'>{item.temp_f}F°</p>
         <p className='o-feelslike'>Feels Like {item.feelslike_f}F°</p>
         <p className='o-text'>{item.condition.text}</p>
@@ -36,7 +40,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
         className={`more-data ${listOpenById === id ?
           'more-data-open' : 'more-data'}`}>
 
-        {/* //* On open  */} 
+        {/* //* On open  */}
         <MoreData item={item} />
       </div>
     </div>

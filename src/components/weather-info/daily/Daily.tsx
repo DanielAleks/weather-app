@@ -12,6 +12,7 @@ function Daily({ YOUR_API_KEY }) {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
     setWeatherForecast(data.forecast.forecastday)
+    console.log(data, 'current working on Now') 
   }
 
   useEffect(() => {
@@ -23,11 +24,11 @@ function Daily({ YOUR_API_KEY }) {
       <p className='daily-top-header'>The Next Three Days...</p>
 
       <div className='daily-outer-container'>
-        {weatherForecast && weatherForecast.map((item) =>
+        {weatherForecast && weatherForecast.map((item) => 
           <div className='daily-container'>
             <div className='daily-header'>
               <p className='daily-date'>{item.date}</p>
-              <BsCloud color='white' size={40} /> 
+              <img src={item.day.condition.icon} className='day-icon' alt="dad" />
               <p>{item.day.condition.text}</p>
             </div>
 
