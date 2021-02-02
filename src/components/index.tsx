@@ -6,8 +6,6 @@ import Hourly from './weather-info/hourly/Hourly';
 import SearchBar from './top-section/search-bar/SearchBar';
 import ImageSection from './top-section/image-section/ImageSection';
 import './index.sass'
-import './top-section/search-bar/x-search.sass'
-import './top-section/search-bar/x-dropdown-menu.sass'
 
 function Index() {
   const [city, setCity]: any = useState('New York')
@@ -31,14 +29,13 @@ function Index() {
   async function places() {
     const fetchedWeatherData = await fetch(commonNames)
     const data = await fetchedWeatherData.json()
-    // const dataConcatenated = data.concat{}
     setArea(data)
     console.log(data, 'places')
   }
 
   useEffect(() => {
     weather()
-  }, [])
+  }, [city])
 
   useEffect(() => {
     places()

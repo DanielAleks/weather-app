@@ -26,7 +26,7 @@ function Navbar(props) {
   const close = () => setLinkModal(false)
 
   return (
-    <div className="navBar">
+    <div className="navBar"> 
       <div className='project-restrictions'>
         <div className='nav-items'> 
           <div style={{ display: 'flex', alignItems: 'center' }}>

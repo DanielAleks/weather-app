@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import OverviewData from '../components/weather-info/hourly/overview/OverviewData';
 import '../components/weather-info/hourly/x-hourly.sass'
 
@@ -18,24 +19,22 @@ export const Day = ({ dayData, setAccessor, accessor, setListOpenById, listOpenB
     </div>
   )
 }
+export const DaySelected = ({ selData, setNumber, accessor, setAccessor, number }: any) => {
 
-export const DaySelected = ({ selData, accessor, setAccessor, weatherLocationDate }: any) => {
   return (
     <div >
       <p
         className={`optionsText ${accessor === selData.number ?
           'optionsOn' : 'optionsText'}`}
-        onClick={() => setAccessor(selData.number)}>
+        onClick={() => {
+          setAccessor(selData.number)
+          setNumber(selData.number)
+        }}>
         {selData.day}
       </p>
       <hr
-        className={accessor === 1 ? 'lineOff' : 'lineOn'}
+        className={number === selData.number ? 'lineOff' : 'lineOn'}
       />
-      <p
-        className={`textBelow ${accessor === selData.number ?
-          'textOn' : 'textBelow'}`}>
-        {weatherLocationDate}
-      </p>
     </div>
   )
 }

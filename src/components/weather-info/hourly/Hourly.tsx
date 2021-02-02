@@ -9,6 +9,7 @@ function Hourly({ YOUR_API_KEY }) {
   const [weatherLocationDate, setWeatherLocationDate]: any = useState([])
   const [listOpenById, setListOpenById] = useState<number>(null)
   const [accessor, setAccessor] = useState(0)
+  const [number, setNumber] = useState(0)
 
   const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
 
@@ -30,21 +31,24 @@ function Hourly({ YOUR_API_KEY }) {
     { state: weatherLocationTom, number: 1 },
     { state: weatherLocationNext, number: 2 }
   ]
- 
+
   const selData = [
     { day: 'Today', number: 0 },
     { day: 'Tomorrow', number: 1 },
-    { day: 'Day After', number: 2 },
+    { day: 'Day-After', number: 2 },
   ]
- 
+
   return (
     <div id='Hourly'>
       <div className='hourlyContainerOuter'>
-        {selData.map((item) =>
+        {selData.map((item, id) =>
           <DaySelected
+            id={id}
             selData={item}
+            number={number}
+            setNumber={setNumber}
             setAccessor={setAccessor}
-          />
+          /> 
         )}
       </div>
 
@@ -52,7 +56,7 @@ function Hourly({ YOUR_API_KEY }) {
         <Day
           dayData={item}
           accessor={accessor}
-          setAccessor={setAccessor}
+          setAccessor={setAccessor} 
           setListOpenById={setListOpenById}
           listOpenById={listOpenById}
         />
