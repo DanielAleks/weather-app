@@ -22,7 +22,7 @@ function Hourly({ YOUR_API_KEY }) {
     setWeatherLocationDate(data.forecast.forecastday[accessor].date)
   }
 
-  useEffect(() => {
+  useEffect(() => { 
     weather()
   }, [])
 

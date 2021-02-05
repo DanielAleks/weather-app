@@ -35,7 +35,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
         <p className='o-text'>{item.condition.text}</p>
         <p className='o-rain'>{item.chance_of_rain}% <ImDroplet /></p>
       </div>
-
+ 
       <div
         className={`more-data ${listOpenById === id ?
           'more-data-open' : 'more-data'}`}>
