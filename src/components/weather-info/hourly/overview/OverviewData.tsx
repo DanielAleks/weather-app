@@ -19,7 +19,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
       <div
         className='overview-container'
         onClick={() =>
-          listOpenById === id ?
+          listOpenById === id ? 
             setListOpenById(null) :
             setListOpenById(id)}
       >

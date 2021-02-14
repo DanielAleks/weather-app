@@ -25,8 +25,8 @@ function OpenedData({ item }) {
       <div className='second-data-container'>
         <div className='second-text'>
           <p className='more-p'>Visability: </p>
-          <p className='more-p'>Wind Degree: </p>
-          <p className='more-p'>Wind: </p>
+          <p className='more-p'>Wind°: </p>
+          <p className='more-p'>Speed: </p>
           <p className='more-p'>Windchill: </p>
           <p className='more-p'>Pressure: </p>
         </div>

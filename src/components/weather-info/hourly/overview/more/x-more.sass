@@ -3,33 +3,32 @@
   background-color: #2b2a2a
   display: flex
   width: 100%
-  height: 100%  
-  padding-top: 1.2rem
-  padding-bottom: 1.2rem
+  height: 100%
+  padding-top: .8rem
+  padding-bottom: .8rem
   justify-content: center
   overflow: hidden
   align-items: center
 
 .first-data-container
-  display: flex 
+  display: flex
   justify-content: center
 
 .second-data-container
   display: flex
   justify-content: center
-  margin: 1.2rem
   margin-left: 5vw
 
 .first-text
   text-align: start
-  width: 100px
+  width: 15rem
 
 .first-data
   text-align: end
 
 .second-text
   text-align: start
-  width: 12rem
+  width: 15rem
 
 .second-data
   text-align: end
@@ -56,22 +55,17 @@
     padding: .2rem
     font-size: 1.3rem
 
-@media (max-width: 450px)
+@media (max-width: 730px)
   .containerInfoHourly
-    flex-direction: column
     justify-content: center
+    align-items: center
     height: 100%
+  .first-data-container
+    width: 55vw
+    margin-top: 0px
   .second-data-container
+    width: 40vw
     margin-left: 0vw
   .more-p
-    padding: 0px
-    font-size: 1.5rem
-  .first-text
-    width: 25rem
-  .second-text
-    width: 25rem
-  .first-data
-    width: 12rem
-  .second-data
-    width: 12rem
- 
+    font-family: nunito-reg
+    font-size: 1.3rem

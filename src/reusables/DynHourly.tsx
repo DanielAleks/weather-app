@@ -9,7 +9,7 @@ export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) =
           <OverviewData
             item={item}
             id={id}
-            setListOpenById={setListOpenById}
+            setListOpenById={setListOpenById} 
             listOpenById={listOpenById}
           />
         )}

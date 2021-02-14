@@ -26,6 +26,8 @@
   width: 12vw
   cursor: pointer
   text-align: center
+  display: flex
+  justify-content: center
 
 .optionsOn
   color: #801e1e
@@ -36,7 +38,7 @@
   font-size: 2.1rem
 
 .lineOff
-  height: .4rem
+  height: .2rem
   border-style: none
   background: #3900AC
   margin-bottom: 1.2rem
@@ -44,7 +46,7 @@
   transition: box-shadow 1s, height 1s
 
 .lineOn
-  height: 0px
+  height: 0rem
   border-style: none
   background: #3900AC
   margin-bottom: 1.2rem
@@ -53,15 +55,16 @@
 @media (max-width: 1000px)
   .optionsText
     font-size: 1.4rem
-  .optionsText:hover 
+  .optionsText:hover
     font-size: 1.5rem
 
 @media (max-width: 600px)
   .optionsText
-    font-size: 1rem
+    width: 15vw
+    font-size: 1.4rem
     margin-top: -1rem
   .optionsText:hover
-    font-size: 1rem
+    font-size: 1.5rem
   .lineOn
     margin-top: -2rem
   .lineOff
