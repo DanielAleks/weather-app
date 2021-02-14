@@ -14,7 +14,7 @@ function DailyInfo({item}) {
         <p>Precipitation:</p> 
       </div> 
 
-      <div className='daily-info-p'>
+      <div className='daily-info-p'> 
         <p>{item.day.avghumidity}%</p>
         <p>{item.day.avgvis_miles}miles </p>
         <p>{item.day.mintemp_f}F°</p>

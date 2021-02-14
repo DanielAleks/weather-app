@@ -25,11 +25,15 @@
 .daily-container:hover
   transition: 0.5s linear
   opacity: 1
-  background: #35019e 
+  background: #35019e
 
 .daily-header
   text-align: center
   padding-bottom: 2rem
+  font-size: 1.4rem
+  height: 15rem
+
+.daily-desc
 
 .daily-date
   padding-top: 2rem
@@ -40,19 +44,23 @@
   width: 5rem
   height: 5rem
 
-@media (max-width: 800px)
+@media (max-width: 900px)
   .daily-container
-    width: 23vw
+    width: 25vw
   .daily-top-header
     font-size: 2rem
   .daily-date
     font-size: 1.8rem
     font-family: nunito-lightI
+  .daily-header
+    font-size: 1.2rem
 
 @media (max-width: 700px)
   .daily-container
     width: 30vw
     padding-bottom: 2rem
+  .daily-header
+    font-size: 1.2rem
 
 @media (max-width: 500px)
   .daily-outer-container
@@ -60,3 +68,5 @@
   .daily-container
     width: 99vw
     padding-bottom: 2rem
+  .daily-header
+    font-size: 1.2rem

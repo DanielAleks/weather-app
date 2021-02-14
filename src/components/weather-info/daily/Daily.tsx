@@ -29,12 +29,12 @@ function Daily({ YOUR_API_KEY }) {
             <div className='daily-header'>
               <p className='daily-date'>{item.date}</p>
               <img src={item.day.condition.icon} className='day-icon' alt="dad" />
-              <p>{item.day.condition.text}</p>
+              <p className='daily-desc'>{item.day.condition.text}</p>
             </div>
 
             <DailyInfo item={item} />
           </div>
-        )}
+        )} 
       </div>
 
     </div>
