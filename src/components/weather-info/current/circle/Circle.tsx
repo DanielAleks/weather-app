@@ -10,7 +10,7 @@ function Circle({ weatherCurrent, weatherIcon }) {
           </p>
         <img src={weatherIcon && weatherIcon.icon} alt="icon" />
         <p className='feels-like'>
-          feels like {weatherCurrent && weatherCurrent.feelslike_f}F°
+          feels like {weatherCurrent && weatherCurrent.feelslike_f}F° 
           </p>
       </div>
     </div>
