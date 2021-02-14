@@ -3,7 +3,6 @@
   align-items: center
   justify-content: center
   background: #262626
-  height: 50px
   width: 70%
   border: 1px
   border-style: solid
@@ -18,13 +17,14 @@
 
 .more-data
   overflow: hidden
-  transition: height .5s
-  height: 0px
   width: 70%
+  transition: 1s max-height ease-out
+  max-height: 0vh
 
 .more-data-open
-  transition: height 1s
-  height: 18vh
+  transition: 1s max-height ease-in
+  max-height: 100vh
+
 p
   padding: .5rem
   color: #494949
@@ -50,6 +50,5 @@ p
     width: 70%
   .more-data-open
     width: 70% 
-    height: 26vh
   .more-data
     width: 70%

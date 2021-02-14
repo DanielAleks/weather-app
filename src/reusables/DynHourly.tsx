@@ -2,9 +2,8 @@ import { useState } from 'react';
 import OverviewData from '../components/weather-info/hourly/overview/OverviewData';
 import '../components/weather-info/hourly/x-hourly.sass'
 
-export const Day = ({ dayData, setAccessor, accessor, setListOpenById, listOpenById }: any) => {
+export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) => {
   return (
-    // onClick={() => setAccessor(0)}
     <div className='hourlyContainer' style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
       <div>
         {dayData.state.map((item, id) =>

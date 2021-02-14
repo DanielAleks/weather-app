@@ -6,11 +6,9 @@ import './x-overview.sass'
 import './x-oItems.sass'
 
 function OverviewData({ item, id, setListOpenById, listOpenById }) {
-  const [neverDisplay, setNeverDisplay] = useState(false)
 
-
-  const time = [
-    '12AM', '1AM', '2AM', '3AM', '4AM', '5AM',
+  const time = [ 
+    '12AM', '1AM', '2AM', '3AM', '4AM', '5AM', 
     '6AM', '7AM', '8AM', '9AM', '10AM', '11AM',
     '12PM', '1PM', '2PM', '3PM', '4PM', '5PM',
     '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'
@@ -36,8 +34,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
         <p className='o-rain'>{item.chance_of_rain}% <ImDroplet /></p>
       </div>
  
-      <div
-        className={`more-data ${listOpenById === id ?
+      <div className={`more-data ${listOpenById === id ?
           'more-data-open' : 'more-data'}`}>
 
         {/* //* On open  */}

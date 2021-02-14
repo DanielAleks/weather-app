@@ -19,7 +19,7 @@ function OpenedData({ item }) {
           <p className='more-p'>{item.heatindex_f}F°</p>
           <p className='more-p'>{item.humidity}%</p> 
           <p className='more-p'>{item.precip_in}in.</p>
-        </div>
+        </div> 
       </div>
 
       <div className='second-data-container'>

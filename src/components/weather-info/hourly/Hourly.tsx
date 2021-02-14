@@ -56,7 +56,6 @@ function Hourly({ YOUR_API_KEY }) {
         <Day
           dayData={item}
           accessor={accessor}
-          setAccessor={setAccessor} 
           setListOpenById={setListOpenById}
           listOpenById={listOpenById}
         />
