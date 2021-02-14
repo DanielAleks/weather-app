@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './navbar/Navbar';
 import Current from './weather-info/current/Current';
 import Daily from './weather-info/daily/Daily';

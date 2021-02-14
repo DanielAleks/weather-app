@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MoreData from './more/MoreData'
 import { ImDroplet } from 'react-icons/im'
 import { WiDayRainMix } from 'react-icons/wi'

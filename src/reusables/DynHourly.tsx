@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import OverviewData from '../components/weather-info/hourly/overview/OverviewData';
 import '../components/weather-info/hourly/x-hourly.sass'
 

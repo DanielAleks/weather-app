@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { BsCloud } from 'react-icons/bs'
 import DailyInfo from './info/DailyInfo'
 import './x-daily.sass'
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { BsCloud } from 'react-icons/bs'
 import './x-circle.sass'
 
 function Circle({ weatherCurrent, weatherIcon }) {

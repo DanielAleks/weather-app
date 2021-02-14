@@ -20,7 +20,7 @@ function useWindowSize() {
 }
 
 function Navbar(props) {
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
   const [linkModal, setLinkModal] = useState(false);
 
   const close = () => setLinkModal(false)

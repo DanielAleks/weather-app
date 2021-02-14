@@ -6,7 +6,7 @@ function SearchBar({ weatherLocation, weatherCurrent, city }) {
 
   async function placesImage() {
     const apikey = 'AIzaSyB2xvlwMVlw0xW0C1hL_0A8-lNotiNRClM'
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
     // const client = 'UY21H3DQEWPDQHH23GN43VXGTQUMNHWZLON5HJP5TXGNJK2L'
     // const secret = '05HJZRAZCZXJV0WHPWOKM5TOANHEYUOLAFJHDRX5ZXUH1GZD'
     // const placeHttp = `https://api.foursquare.com/v2/venues/explore/?near=Shibuya&venuePhotos=1&section=food&client_id=${client}&client_secret=${secret}&v=20131124`

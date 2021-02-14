@@ -6,7 +6,6 @@ function Hourly({ YOUR_API_KEY }) {
   const [weatherLocationToday, setWeatherLocationToday]: any = useState([])
   const [weatherLocationTom, setWeatherLocationTom]: any = useState([])
   const [weatherLocationNext, setWeatherLocationNext]: any = useState([])
-  const [weatherLocationDate, setWeatherLocationDate]: any = useState([])
   const [listOpenById, setListOpenById] = useState<number>(null)
   const [accessor, setAccessor] = useState(0)
   const [number, setNumber] = useState(0)
@@ -19,7 +18,6 @@ function Hourly({ YOUR_API_KEY }) {
     setWeatherLocationToday(data.forecast.forecastday[0].hour)
     setWeatherLocationTom(data.forecast.forecastday[1].hour)
     setWeatherLocationNext(data.forecast.forecastday[2].hour)
-    setWeatherLocationDate(data.forecast.forecastday[accessor].date)
   }
 
   useEffect(() => { 

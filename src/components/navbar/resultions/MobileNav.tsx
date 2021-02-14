@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiMenu } from 'react-icons/fi';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import './x-mobile-modal.sass'
 
 function MobileNav({ setLinkModal, linkModal, width, close }) {

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import CurrentTitle from './info/CurrentTitle'
-import { BsCloud } from 'react-icons/bs'
 import './x-current.sass'
 import CurrentInfo from './info/CurrentInfo'
 import Circle from './circle/Circle'
 
 function Current({ YOUR_API_KEY, city }) {
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
-  const [weatherForcast, setWeatherForcast]: any = useState([])
   const [weatherPhase, setWeatherPhase]: any = useState([])
   const [weatherIcon, setWeatherIcon]: any = useState([])
 
@@ -24,7 +22,6 @@ function Current({ YOUR_API_KEY, city }) {
   async function weather2nd() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
-    setWeatherForcast(data.forecast.current)
     setWeatherPhase(data.forecast.forecastday[0].astro)
   }
 
