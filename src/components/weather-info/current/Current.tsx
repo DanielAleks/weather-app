@@ -36,7 +36,7 @@ function Current({ YOUR_API_KEY, city }) {
   return (
 
     <div className='current-section' id='Today'>
-      <div className='current-container'>
+      <div className='current-container'> 
         <p className='current-header'>Today</p> 
         <div className='current-info'>
           <CurrentTitle />
@@ -44,7 +44,7 @@ function Current({ YOUR_API_KEY, city }) {
           <CurrentInfo
             weatherCurrent={weatherCurrent}
             weatherPhase={weatherPhase}
-          />
+          /> 
           {/* //? weatherCurrent.description is commented in both */}
         </div>
       </div>
