@@ -11,6 +11,7 @@ function MobileNav({ setLinkModal, linkModal, width, close }) {
           strokeWidth={2}
           size={width < 600 ? 16 : 18}
           className='menu-position'
+          color="white"
           onClick={() => setLinkModal(true)}
         />
       }

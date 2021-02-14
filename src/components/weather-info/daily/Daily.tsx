@@ -21,7 +21,7 @@ function Daily({ city, YOUR_API_KEY }) {
   return (
     <div className='daily-position' id='Daily'>
       <p className='daily-top-header'>The Next Three Days...</p>
-
+ 
       <div className='daily-outer-container'>
         {weatherForecast && weatherForecast.map((item) => 
           <div className='daily-container'>
