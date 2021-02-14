@@ -10,7 +10,7 @@ function Current({ YOUR_API_KEY, city }) {
   const [weatherIcon, setWeatherIcon]: any = useState([])
 
   const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
-  const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
+  const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=${city}&days=7`
 
   async function weather() {
     const fetchedWeatherData = await fetch(current)
@@ -28,7 +28,7 @@ function Current({ YOUR_API_KEY, city }) {
   useEffect(() => {
     weather()
     weather2nd()
-  }, [])
+  }, [city])
 
   return (
 

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import DailyInfo from './info/DailyInfo'
 import './x-daily.sass'
 
-function Daily({ YOUR_API_KEY }) {
+function Daily({ city, YOUR_API_KEY }) {
   const [weatherForecast, setWeatherForecast]: any = useState([])
 
-  const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=07112&days=7`
+  const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=${city}&days=7`
 
   async function weather() {
     const fetchedWeatherData = await fetch(weekThree)
@@ -16,7 +16,7 @@ function Daily({ YOUR_API_KEY }) {
 
   useEffect(() => {
     weather()
-  }, [])
+  }, [city])
 
   return (
     <div className='daily-position' id='Daily'>

@@ -64,9 +64,9 @@ function Index() {
         {/* //* TODAY */}
         <Current city={city} YOUR_API_KEY={YOUR_API_KEY} />
         {/* //*DAILY */}
-        <Daily YOUR_API_KEY={YOUR_API_KEY} />
+        <Daily city={city} YOUR_API_KEY={YOUR_API_KEY} />
         {/* //*HOURLY */}
-        <Hourly YOUR_API_KEY={YOUR_API_KEY} />
+        <Hourly city={city} YOUR_API_KEY={YOUR_API_KEY} />
       </div>
     </div>
   )

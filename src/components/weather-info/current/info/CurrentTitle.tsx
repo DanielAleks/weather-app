@@ -9,7 +9,7 @@ function CurrentTitle() {
         <p>Precipitation:</p>
         <p>Gust:</p>
         <p>Pressure:</p>
-        <p>Visability:</p> 
+        <p>Visability:</p>  
         <p>Wind Dir:</p>
         <p>Wind Speed:</p>
         {/* <p>Description:</p> */}
