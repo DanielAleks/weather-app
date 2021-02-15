@@ -11,8 +11,20 @@ function Daily({ city, YOUR_API_KEY }) {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
     setWeatherForecast(data.forecast.forecastday)
-    console.log(data, 'current working on Now') 
+    console.log(data, 'current working on Now')
   }
+
+  const surferImage = (id) => {
+    if (id === 0) {
+      return 'weather-container'
+    } else if (id === 1) {
+      return 'weather-container'
+    } else if (id === 2) {
+      return 'weather-container'
+    }
+  }
+
+  const stylesArray: any = ['daily-container1', 'daily-container2', 'daily-container3']
 
   useEffect(() => {
     weather()
@@ -21,19 +33,21 @@ function Daily({ city, YOUR_API_KEY }) {
   return (
     <div className='daily-position' id='Daily'>
       <p className='daily-top-header'>The Next Three Days...</p>
- 
-      <div className='daily-outer-container'>
-        {weatherForecast && weatherForecast.map((item) => 
-          <div className='daily-container'>
-            <div className='daily-header'>
-              <p className='daily-date'>{item.date}</p>
-              <img src={item.day.condition.icon} className='day-icon' alt="dad" />
-              <p className='daily-desc'>{item.day.condition.text}</p>
-            </div>
 
-            <DailyInfo item={item} />
-          </div>
-        )} 
+      <div className='daily-outer-container'>
+
+
+        {weatherForecast && weatherForecast.map((item, id) =>
+            <div className={stylesArray[id]}>
+              <div className='daily-header'>
+                <p className='daily-date'>{item.date}</p>
+                <img src={item.day.condition.icon} className='day-icon' alt="dad" />
+                <p className='daily-desc'>{item.day.condition.text}</p>
+              </div>
+
+              <DailyInfo item={item} />
+            </div>
+        )}
       </div>
 
     </div>

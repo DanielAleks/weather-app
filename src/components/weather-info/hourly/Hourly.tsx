@@ -19,7 +19,7 @@ function Hourly({ YOUR_API_KEY, city }) {
     setWeatherLocationTom(data.forecast.forecastday[1].hour)
     setWeatherLocationNext(data.forecast.forecastday[2].hour)
   }
-
+ 
   useEffect(() => { 
     weather()
   }, [city])

@@ -13,7 +13,7 @@
   justify-content: center
   padding-bottom: 10rem
 
-.daily-container
+.daily-container1,  .daily-container2,  .daily-container3
   background: rgba(53, 1, 158, .0)
   transition: 0.2s linear
   border-style: solid
@@ -22,10 +22,29 @@
   border-radius: 5px
   width: 18vw
 
-.daily-container:hover
-  transition: 0.5s linear
-  opacity: 1
-  background: #35019e
+.daily-container1
+  background-position: 50%
+.daily-container3
+  background-position: 20%
+
+
+.daily-container1:hover
+  background: url('../../../assets/images/s3.jpg')
+  background-size: cover
+  transition: background-position 1s
+  background-position: 20%
+
+.daily-container2:hover
+  background: url('../../../assets/images/s11.jpg')
+  background-size: cover
+  transition: background-position 1s
+  background-position: 50%
+
+.daily-container3:hover
+  background: url('../../../assets/images/s9.jpg')
+  background-size: cover
+  transition: background-position 1s
+  background-position: 50%
 
 .daily-header
   text-align: center

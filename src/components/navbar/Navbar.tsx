@@ -32,10 +32,10 @@ function Navbar(props) {
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <BsCloud
               strokeWidth='.5'
-              color='#971414'
+              color='#FE0000'
               size={width < 500 ? 20 : 25}
             />
-            <p className='nav-header'>QuickWeather</p>
+            <p className='nav-header'>BeachWeather</p>
           </div>
 
           <MobileNav
