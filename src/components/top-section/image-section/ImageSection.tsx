@@ -27,7 +27,10 @@ function SearchBar({ weatherLocation, weatherCurrent, city }) {
         <div className='top-container'>
           <p className='top-name'>{weatherLocation && weatherLocation.name}</p>
           <p className='top-local'>{weatherLocation && weatherLocation.localtime}</p>
+          <div className='bg-surfBaord'>
+
           <p className='top-temp'>{weatherCurrent && weatherCurrent.temp_f}F°</p>
+          </div> 
         </div>
       </div>
     </div>

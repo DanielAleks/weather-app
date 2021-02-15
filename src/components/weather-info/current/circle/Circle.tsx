@@ -16,5 +16,5 @@ function Circle({ weatherCurrent, weatherIcon }) {
     </div>
   )
 }
-
+ 
 export default Circle
