@@ -12,7 +12,7 @@ function CurrentInfo({ weatherCurrent, weatherPhase }) {
         <p>{weatherCurrent && weatherCurrent.vis_miles} miles</p>
         <p>
           {weatherCurrent && weatherCurrent.wind_degree}°
-          {weatherCurrent && weatherCurrent.wind_dir}
+          {weatherCurrent && weatherCurrent.wind_dir} 
         </p>
         <p>{weatherCurrent && weatherCurrent.wind_mph}mph</p>
         {/* <p>{weatherCurrent.condition.text}</p> */}

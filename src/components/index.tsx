@@ -8,7 +8,7 @@ import ImageSection from './top-section/image-section/ImageSection';
 import './index.sass'
 
 function Index() {
-  const [city, setCity]: any = useState('New York')
+  const [city, setCity]: any = useState('Honolulu, Hawaii')
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [area, setArea]: any = useState([])

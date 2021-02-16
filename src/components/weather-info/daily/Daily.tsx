@@ -10,18 +10,8 @@ function Daily({ city, YOUR_API_KEY }) {
   async function weather() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
-    setWeatherForecast(data.forecast.forecastday)
+    setWeatherForecast(data.forecast && data.forecast.forecastday)
     console.log(data, 'current working on Now')
-  }
-
-  const surferImage = (id) => {
-    if (id === 0) {
-      return 'weather-container'
-    } else if (id === 1) {
-      return 'weather-container'
-    } else if (id === 2) {
-      return 'weather-container'
-    }
   }
 
   const stylesArray: any = ['daily-container1', 'daily-container2', 'daily-container3']

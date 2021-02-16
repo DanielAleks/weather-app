@@ -15,9 +15,9 @@ function Hourly({ YOUR_API_KEY, city }) {
   async function weather() {
     const fetchedWeather = await fetch(weekThree)
     const data = await fetchedWeather.json()
-    setWeatherLocationToday(data.forecast.forecastday[0].hour)
-    setWeatherLocationTom(data.forecast.forecastday[1].hour)
-    setWeatherLocationNext(data.forecast.forecastday[2].hour)
+    setWeatherLocationToday(data.forecast && data.forecast.forecastday[0].hour)
+    setWeatherLocationTom(data.forecast && data.forecast.forecastday[1].hour)
+    setWeatherLocationNext(data.forecast && data.forecast.forecastday[2].hour)
   }
  
   useEffect(() => { 

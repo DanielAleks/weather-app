@@ -13,7 +13,7 @@ function CurrentTitle() {
         <p>Wind Dir:</p>
         <p>Wind Speed:</p>
         {/* <p>Description:</p> */}
-      </div>
+      </div> 
       <div style={{ marginTop: 40 }}> 
         <p>Moon Phase: </p>
         <p>Sunrise: </p>

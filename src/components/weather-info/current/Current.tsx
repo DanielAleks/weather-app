@@ -15,14 +15,14 @@ function Current({ YOUR_API_KEY, city }) {
   async function weather() {
     const fetchedWeatherData = await fetch(current)
     const data = await fetchedWeatherData.json()
-    setWeatherCurrent(data.current) 
-    setWeatherIcon(data.current.condition)
+    setWeatherCurrent(data && data.current) 
+    setWeatherIcon(data.current && data.current.condition)
   }
 
   async function weather2nd() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
-    setWeatherPhase(data.forecast.forecastday[0].astro)
+    setWeatherPhase(data.forecast && data.forecast.forecastday[0].astro)
   }
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function Current({ YOUR_API_KEY, city }) {
           {/* //? weatherCurrent.description is commented in both */}
         </div>
       </div>
-
+ 
       <Circle
         weatherCurrent={weatherCurrent}
         weatherIcon={weatherIcon}

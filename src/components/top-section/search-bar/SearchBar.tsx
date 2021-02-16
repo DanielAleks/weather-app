@@ -19,10 +19,10 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
   useEffect(() => {
     focusInput(inputRef)
   }, [])
- 
+
   return (
     <div className='search-container' >
-      <div className='button--input'>
+      <div >
         <input
           type="text"
           value={city}
@@ -32,6 +32,19 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
           placeholder='enter city'
           onChange={(e) => setCity(e.target.value)}
         />
+        <div className='input-dropdown'>
+          {area.length >= 3 && isModal &&
+            area.map((item) =>
+              <div onClick={() => {
+                setCity(item.name)
+                weather()
+                focusButton(buttonRef)
+              }}
+                className='possible-locations-btn'>
+                {item.name}
+              </div>
+            )}
+        </div>
         {area.length <= 3 &&
           <p className='error-length'>not enough letters</p>}
         <button ref={buttonRef} onClick={() => {
@@ -40,19 +53,7 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
         }}>search</button>
       </div>
 
-      <div className='input-dropdown'>
-        {area.length >= 3 && isModal &&
-          area.map((item) =>
-            <div onClick={() => {
-              setCity(item.name)
-              weather()
-              focusButton(buttonRef)
-            }}
-              className='possible-locations-btn'>
-              {item.name}
-            </div>
-          )}
-      </div>
+
     </div >
   )
 }

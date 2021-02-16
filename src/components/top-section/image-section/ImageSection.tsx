@@ -5,7 +5,7 @@ function SearchBar({ weatherLocation, weatherCurrent, city }) {
   // const [imageDisplay, setImageDisplay]: any = useState([])
 
   // async function placesImage() {
-  //   const apikey = 'AIzaSyB2xvlwMVlw0xW0C1hL_0A8-lNotiNRClM'
+  //   const apikey = 'AIzaSyB2xvlwMVlw0xW0C1hL_0A8-lNotiNRClM' 
   //   const proxyurl = "https://cors-anywhere.herokuapp.com/";
   //   const client = 'UY21H3DQEWPDQHH23GN43VXGTQUMNHWZLON5HJP5TXGNJK2L'
   //   const secret = '05HJZRAZCZXJV0WHPWOKM5TOANHEYUOLAFJHDRX5ZXUH1GZD'
@@ -18,10 +18,10 @@ function SearchBar({ weatherLocation, weatherCurrent, city }) {
   // }
 
   // useEffect(() => {
-  //   placesImage()
+  //   placesImage() 
   // }, []) 
 
-  return (
+  return ( 
     <div className="top-image">
       <div className="image-bg">  
         <div className='top-container'>

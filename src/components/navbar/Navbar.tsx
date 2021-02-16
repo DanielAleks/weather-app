@@ -30,9 +30,9 @@ function Navbar(props) {
       <div className='project-restrictions'>
         <div className='nav-items'> 
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <BsCloud
+            <BsCloud 
               strokeWidth='.5'
-              color='#FE0000'
+              color='#FFF100'
               size={width < 500 ? 20 : 25}
             />
             <p className='nav-header'>BeachWeather</p>

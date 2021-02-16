@@ -5,11 +5,11 @@ export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) =
   return (
     <div className='hourlyContainer' style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
       <div>
-        {dayData.state.map((item, id) =>
+        {dayData.state && dayData.state.map((item, id) =>
           <OverviewData
             item={item}
             id={id}
-            setListOpenById={setListOpenById} 
+            setListOpenById={setListOpenById}
             listOpenById={listOpenById}
           />
         )}
@@ -18,7 +18,6 @@ export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) =
   )
 }
 export const DaySelected = ({ selData, setNumber, accessor, setAccessor, number }: any) => {
-
   return (
     <div >
       <p
