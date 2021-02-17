@@ -42,8 +42,8 @@ function Index() {
 
   return (
     <div>
-      <PineApples />
       <Navbar />
+      <PineApples />
       <div className="project-container">
         <ImageSection
           city={city}
