@@ -19,8 +19,8 @@ function Hourly({ YOUR_API_KEY, city }) {
     setWeatherLocationTom(data.forecast && data.forecast.forecastday[1].hour)
     setWeatherLocationNext(data.forecast && data.forecast.forecastday[2].hour)
   }
- 
-  useEffect(() => { 
+
+  useEffect(() => {
     weather()
   }, [city])
 
@@ -46,7 +46,7 @@ function Hourly({ YOUR_API_KEY, city }) {
             number={number}
             setNumber={setNumber}
             setAccessor={setAccessor}
-          /> 
+          />
         )}
       </div>
 

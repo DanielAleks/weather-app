@@ -4,7 +4,6 @@ import './x-circle.sass'
 function Circle({ weatherCurrent, weatherIcon }) {
   return (
     <div className='circle-container'>
-      {/* <div className='pine-apple'></div> */}
       <div className='circle-items'>
         <p className='circle-temp'>
           {weatherCurrent && weatherCurrent.temp_f}F°
@@ -15,7 +14,7 @@ function Circle({ weatherCurrent, weatherIcon }) {
           </p>
       </div> 
     </div>
-  )
+  ) 
 }
  
 export default Circle 

@@ -12,15 +12,33 @@
   width: 35rem
   border-radius: 5px
   border: none
-  background-color: #454546 
+  background-color: #454546
+  animation: slide-right 1s forwards 2s
+  opacity: 0
 .long-input:focus
   outline: 0
+
+@keyframes slide-right
+  0%
+    opacity: 0
+    transform: translateX(-300px) skewX(20deg)
+  100%
+    opacity: 1
+    transform: translateX(0px) skewX(0deg)
 
 .error-length
   color: #b40101
   position: absolute
   margin-left: 5vw
   font-size: 2rem
+  animation: error-appear 1s forwards 3s
+  opacity: 0
+
+@keyframes error-appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 
 button
   margin-left: 3.8rem
@@ -28,12 +46,22 @@ button
   width: 12rem
   background-color: #e8c606
   border-radius: 10px
-  border: none 
+  border: none
   color: #1f1e1e
   cursor: pointer
+  animation: slide-left 1s forwards 2s
+  opacity: 0
 
 button:focus
   outline: 0
+
+@keyframes slide-left
+  0%
+    opacity: 0
+    transform: translateX(300px) skewX(20deg)
+  100%
+    opacity: 1
+    transform: translateX(0px) skewX(0deg)
 
 @media (max-width: 1000px)
   .long-input

@@ -2,17 +2,29 @@
   background-image: url('../../../assets/images/beach.jpg')
   background-size: cover
   background-position: center
-  height: 33vh
+  height: 31rem
   width: 100%
   object-fit: cover
   vertical-align: bottom
   z-index: 0
   border-bottom-left-radius: .5rem
   border-bottom-right-radius: .5rem
-  border
+  opacity: 0
+  animation: pictureSlide .7s forwards 1s
+
+@keyframes pictureSlide
+  0%
+    opacity: 0
+    transform: translateY(-30rem)
+  1%
+    opacity: 1
+  100%
+    opacity: 1
+    transform: translateY(0rem)
+
 .image-bg
-  background: rgba(0, 0, 0, 0.303) 
-  height: 33vh
+  background: rgba(0, 0, 0, 0.303)
+  height: 31rem
   width: 100%
 
 .top-container
@@ -25,7 +37,7 @@
 
 .top-name
   font-size: 4rem
-  color: #c4c2c2 
+  color: #c4c2c2
   font-family: nunito-bold
 
 .top-local
@@ -42,7 +54,7 @@
   display: flex
   justify-content: center
   align-items: center
-  
+
 .top-temp
   font-family: surf
   font-size: 3.7rem

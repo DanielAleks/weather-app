@@ -3,7 +3,7 @@ import './x-more.sass'
 
 function OpenedData({ item }) { 
   return (
-    <div className='containerInfoHourly'> 
+    <div className='containerInfoHourly' > 
       <div className='first-data-container'>
         <div className='first-text'>
           <p className='more-p'>DewPoint: </p>

@@ -1,0 +1,55 @@
+.pine-apple-container
+  position: fixed
+  margin-top: 10vh
+  height: 90vh
+  width: 100vw
+
+.pine-apple,  .pine-apple2,  .pine-apple3
+  background: url('../../assets/images/pineApple.png')
+  background-size: cover
+  height: 15rem
+  width: 3.5rem
+  background-position: 50%
+  position: absolute
+
+.pine-apple
+  animation: pineAppleUp 35s infinite
+
+.pine-apple2
+  animation: pineAppleLeft 19s infinite reverse
+
+.pine-apple3
+  animation: pineAppleLeft 50s infinite
+
+@keyframes pineAppleUp
+  0%
+    opacity: 0
+  45%
+    transform: rotate(10deg)
+    opacity: 0
+    margin-bottom: 0%
+  50%
+    transform: rotate(-10deg)
+    opacity: 1
+  55%
+    transform: rotate(10deg)
+    opacity: 0
+    margin-bottom: 5%
+  100%
+    opacity: 0
+@keyframes pineAppleLeft
+  0%
+    opacity: 0
+  45%
+    transform: rotate(10deg)
+    opacity: 0
+    margin-left: 5%
+  50%
+    transform: rotate(-10deg)
+    opacity: 1
+  55%
+    transform: rotate(10deg)
+    opacity: 0
+    margin-left: 0%
+  100%
+    opacity: 0

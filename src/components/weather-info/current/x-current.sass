@@ -2,17 +2,29 @@
   display: flex
   justify-content: center
 
-.current-container 
+.current-container
   width: 35rem
-  background: linear-gradient(90deg, rgba(58,58,58,1) 0%, #484848 100%);
-  border-radius: 5px 
+  background: linear-gradient(90deg, rgba(58,58,58,1) 0%, #484848 100%)
+  border-radius: 5px
+  animation: slide-right-box 3s
+
+  @keyframes slide-right-box
+    0%
+      opacity: 0
+      transform: translateX(-500px) skewX(20deg)
+    50%
+      opacity: 0
+      transform: translateX(-500px) skewX(20deg)
+    100%
+      opacity: 1
+      transform: translateX(0px) skewX(0deg)
 
 .current-header
   text-align: center
   padding: 2rem
   font-size: 3.8rem
   font-family: Nunito-bold
-  
+
 .current-info
   display: flex
   justify-content: center

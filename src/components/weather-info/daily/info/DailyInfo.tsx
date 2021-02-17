@@ -1,9 +1,11 @@
 import React from 'react'
 import './o-dailyInfo.sass'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function DailyInfo({item}) {
   return (
-    <div className='info-container'>
+    <div className='info-container' data-aos="zoom-in">
       <div className='daily-items-width'>
         <p>Humidity:</p>
         <p>Visability:</p>
