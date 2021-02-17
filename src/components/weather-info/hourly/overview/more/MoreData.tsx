@@ -1,9 +1,9 @@
 import React from 'react'
 import './x-more.sass'
 
-function OpenedData({ item }) { 
+function OpenedData({ item, id }) { 
   return (
-    <div className='containerInfoHourly' > 
+    <div className='containerInfoHourly' style={{ backgroundPositionY: `${id * 9.4}%`}}> 
       <div className='first-data-container'>
         <div className='first-text'>
           <p className='more-p'>DewPoint: </p>

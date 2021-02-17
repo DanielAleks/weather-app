@@ -38,7 +38,7 @@ function OverviewData({ item, id, setListOpenById, listOpenById }) {
         'more-data-open' : 'more-data'}`}>
 
         {/* //* On open  */}
-        <MoreData item={item} />
+        <MoreData item={item} id={id} />
       </div>
     </div>
   )
