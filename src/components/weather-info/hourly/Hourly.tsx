@@ -10,7 +10,7 @@ function Hourly({ YOUR_API_KEY, city }) {
   const [accessor, setAccessor] = useState(0)
   const [number, setNumber] = useState(0)
 
-  const weekThree = `http://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=${city}&days=7`
+  const weekThree = `https://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=${city}&days=7`
 
   async function weather() {
     const fetchedWeather = await fetch(weekThree)

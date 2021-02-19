@@ -17,8 +17,8 @@ function Index() {
 
 
   const YOUR_API_KEY = '32902a43900f400cae0210316210701'
-  const commonNames = `http://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=${city}`
-  const current = `http://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
+  const commonNames = `https://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=${city}`
+  const current = `https://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`
 
   async function weather() {
     const fetchedWeatherData = await fetch(current)
