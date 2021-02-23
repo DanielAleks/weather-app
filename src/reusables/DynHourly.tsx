@@ -1,8 +1,5 @@
 import OverviewData from '../components/weather-info/hourly/overview/OverviewData';
 import '../components/weather-info/hourly/x-hourly.sass'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
 
 export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) => {
   return (

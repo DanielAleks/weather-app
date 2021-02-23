@@ -16,7 +16,6 @@ function Daily({ city, YOUR_API_KEY }) {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
     setWeatherForecast(data.forecast && data.forecast.forecastday)
-    console.log(data, 'current working on Now')
   }
 
   const stylesArray: any = ['daily-container1', 'daily-container2', 'daily-container3']

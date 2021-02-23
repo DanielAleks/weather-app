@@ -1,7 +1,5 @@
 import React from 'react'
 import './o-dailyInfo.sass'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 function DailyInfo({item}) {
   return (

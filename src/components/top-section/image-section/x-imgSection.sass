@@ -1,5 +1,5 @@
 .top-image
-  background-image: url('../../../assets/images/beach.jpg')
+  background-image: url('../../../assets/images/pink-flowers.jpg')
   background-size: cover
   background-position: center
   height: 31rem
@@ -35,6 +35,22 @@
   height: 100%
   margin-right: 3.8rem
 
+.info-shade-container
+  background: #00000080
+  border-radius: 10px
+  text-align: end
+  animation: slide-me-left 1s forwards 2.5s
+  opacity: 0
+  padding: 1rem
+
+@keyframes slide-me-left
+  0%
+    opacity: 0
+    transform: translateX(-50rem) skew(20deg)
+  100%
+    opacity: 1
+    transform: translateX(0rem) skew(0deg)
+
 .top-name
   font-size: 4rem
   color: #c4c2c2
@@ -45,20 +61,10 @@
   font-size: 2.5rem
   color: #b1b1b1
 
-.bg-surfBaord
-  background: url('../../../assets/images/surfBoard2.png')
-  height: 5rem
-  width: 20rem
-  margin-right: 2rem
-  background-size: cover
-  display: flex
-  justify-content: center
-  align-items: center
-
 .top-temp
   font-family: surf
   font-size: 3.7rem
-  margin-left: 4rem
   transform: rotate(-4deg)
   border-radius: 10px
-  color: #0462dc
+  color: #07479b
+  text-shadow: 2px 2px 3px #000000;

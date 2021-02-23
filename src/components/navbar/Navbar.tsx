@@ -27,15 +27,15 @@ function Navbar(props) {
 
   return ( 
     <div className="navBar"> 
-      <div className='project-restrictions'>
+      <div className='project-restrictions'> 
         <div className='nav-items'> 
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <BsCloud 
               strokeWidth='.5'
-              color='#E7C506'
+              color='#F6EE8A'
               size={width < 500 ? 20 : 25}
             />
-            <p className='nav-header'>BeachWeather</p>
+            <p className='nav-header'>QuickWeather</p>
           </div>
 
           <MobileNav
