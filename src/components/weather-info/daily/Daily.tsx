@@ -18,8 +18,6 @@ function Daily({ city, YOUR_API_KEY }) {
     setWeatherForecast(data.forecast && data.forecast.forecastday)
   }
 
-  const stylesArray: any = ['daily-container1', 'daily-container2', 'daily-container3']
-
   useEffect(() => {
     weather()
   }, [city])
@@ -30,13 +28,13 @@ function Daily({ city, YOUR_API_KEY }) {
 
       <div className='daily-outer-container' data-aos="fade-left">
         {weatherForecast && weatherForecast.map((item, id) =>
-          <div className={stylesArray[id]}>
+          <div className="daily-container">
             <div className='daily-header'>
-              <p className='daily-date'>{item.date}</p>
+              <p className='daily-date'>{item.date}</p> 
               <img src={item.day.condition.icon} className='day-icon' alt="dad" />
               <p className='daily-desc'>{item.day.condition.text}</p>
             </div>
-
+ 
             <DailyInfo item={item} />
           </div>
         )}

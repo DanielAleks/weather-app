@@ -3,19 +3,19 @@ import '../components/weather-info/hourly/x-hourly.sass'
 
 export const Day = ({ dayData, accessor, setListOpenById, listOpenById }: any) => {
   return (
-    <div className='hourlyContainer' style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
+    <div style={{ display: accessor === dayData.number ? 'flex' : 'none' }}>
       <div>
         {dayData.state && dayData.state.map((item, id) =>
           <OverviewData
             item={item}
             id={id}
-            setListOpenById={setListOpenById}
-            listOpenById={listOpenById}
+            setListOpenById={setListOpenById} 
+            listOpenById={listOpenById} 
           />
         )}
       </div>
     </div>
-  )
+  ) 
 }
 export const DaySelected = ({ selData, setNumber, accessor, setAccessor, number }: any) => {
   return (

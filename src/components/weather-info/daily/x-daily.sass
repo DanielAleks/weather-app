@@ -13,7 +13,7 @@
   margin-left: 2%
   padding-bottom: 10rem
 
-.daily-container1,  .daily-container2,  .daily-container3
+.daily-container
   transition: 0.2s linear
   border-style: solid
   border-color: #4b4b4b
@@ -21,28 +21,11 @@
   border-radius: 5px
   width: 33rem
 
-.daily-container1
-  background-position: 50%
-.daily-container3
-  background-position: 20%
-
-.daily-container1:hover
+.daily-container:hover
   background: #003780a8
   background-size: cover
   transition: background-position 1s
   background-position: 20%
-
-.daily-container2:hover
-  background: #003780a8
-  background-size: cover
-  transition: background-position 1s
-  background-position: 50%
-
-.daily-container3:hover
-  background: #003780a8
-  background-size: cover
-  transition: background-position 1s
-  background-position: 50%
 
 .daily-header
   text-align: center
@@ -73,7 +56,7 @@
     font-size: 1.2rem
 
 @media (max-width: 1050px)
-  .daily-container1,  .daily-container2,  .daily-container3
+  .daily-container
     width: 30vw
     padding-bottom: 2rem
   .daily-header
@@ -82,8 +65,7 @@
 @media (max-width: 730px)
   .daily-outer-container
     flex-direction: column
-  .daily-container1,  .daily-container2,  .daily-container3
-    max-width: 100%
+  .daily-container
     width: 100vw
     padding-bottom: 2rem
     border-right-width: 0px
@@ -91,9 +73,3 @@
     border-radius: 0px
   .daily-header
     font-size: 1.2rem
-  .daily-container1:hover
-    background-position: 5% 100%
-  .daily-container2:hover
-    background-position: 50% 20%
-  .daily-container3:hover
-    background-position: 50% 0%
