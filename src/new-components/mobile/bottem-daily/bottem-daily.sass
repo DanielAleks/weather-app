@@ -1,37 +1,59 @@
 .bottem-daily-container
-  height: 60vh
+  height: 70vh
   width: 100%
   position: absolute
   bottom: 0px
   z-index: 3
 
 .bg-bottom-daily
+  border-top-left-radius: 5rem
+  border-top-right-radius: 5rem
   background: #000
   opacity: .8
   height: 100%
   width: 100%
   position: absolute
-  z-index: 1
+  z-index: -1
 
 .daily-container
-  height: 20rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: 40rem
   width: 50rem
-  background: yellow
-  position: absolute
-  z-index: 10000
-
 .daily-header
-  color: white
-  font-size: 16px
+  margin-bottom: 3rem
 
 .daily-date
   color: white
-  font-size: 16px
-
+  font-family: oleo-bold
+  font-size: 2.5rem
+  letter-spacing: 2px
 .day-icon
   height: 100px
   width: 100px
-
 .daily-desc
-  color: white
-  font-size: 16px
+  color: #b3b3b3
+  font-size: 2rem
+
+.daily-day-headers
+  display: flex
+  position: absolute
+  bottom: 25px
+  margin-left: 15%
+  align-items: center
+  div
+    display: flex
+    cursor: pointer
+    p
+      font-size: 3rem
+      margin-left: .5rem
+      margin-right: .5rem
+      font-family: oleo-bold
+
+  .daily-before
+    margin-right: 2rem
+
+  .daily-after
+    margin-left: 2rem

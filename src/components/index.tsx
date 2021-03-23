@@ -22,7 +22,6 @@ function Index() {
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [area, setArea]: any = useState([])
-  const [weatherCondition, setWeatherCondition]: any = useState([])
   const [isModal, setIsModal] = useState(true)
   const [weatherForecast, setWeatherForecast]: any = useState([])
   const [weatherPhase, setWeatherPhase]: any = useState([])
@@ -37,8 +36,7 @@ function Index() {
     const data = await fetchedWeatherData.json()
     setWeatherLocation(data.location)
     setWeatherCurrent(data.current)
-    setWeatherCondition(data.current && data.current.condition)
-    console.log(data, 'daniel right here catch me!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    console.log(data, 'current DATA DANIEL')
 
   }
   async function places() {
@@ -49,8 +47,8 @@ function Index() {
   async function weatherForcast() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
-    setWeatherForecast(data.forecast && data.forecast.forecastday)
-    setWeatherPhase(data.forecast && data.forecast.forecastday[0].astro)
+    setWeatherForecast(data.forecast && data.forecast.forecastday[1])
+    console.log(data, 'weekThree DATA DANIEL')
   }
 
   useEffect(() => {
@@ -64,7 +62,6 @@ function Index() {
       <div className='bg-main-index' />
       <TopInfo
         weatherLocation={weatherLocation}
-        weatherCondition={weatherCondition}
         weatherCurrent={weatherCurrent}
       />
       <BottomDaily
