@@ -1,7 +1,7 @@
 import Nav from './nav/Nav'
-import Daily from './daily/Daily'
-import './bottem-daily.sass'
 import Hourly from './hourly/Hourly'
+import Daily from '../../../reusables/daily/Daily'
+import './bottem-daily.sass'
 
 function BottomDaily({ weatherForecast, isDaily, setIsDaily }) {
   return (
@@ -17,6 +17,7 @@ function BottomDaily({ weatherForecast, isDaily, setIsDaily }) {
         <Hourly weatherForecast={weatherForecast} />
         : null
       }
+      
 
     </div>
   )

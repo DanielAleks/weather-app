@@ -14,12 +14,12 @@ function Daily({weatherForecast}) {
         </div>
 
         <DailyInfo item={weatherForecast} />
-      </div>
+      </div> 
 
       <div className='daily-day-headers'>
         <div className='daily-before'>
           <IoIosArrowBack size={30} color='white' />
-          <p>Monday</p>
+          <p>Monday</p>  
         </div>
 
         <div className='daily-after'>

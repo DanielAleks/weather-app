@@ -1,0 +1,66 @@
+.daily-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  height: 45rem
+  width: 50rem
+  position: absolute
+.daily-header
+  margin-bottom: 3rem
+
+.daily-date
+  color: white
+  font-family: oleo-bold
+  font-size: 2.5rem
+  letter-spacing: 2px
+.day-icon
+  height: 100px
+  width: 100px
+  margin-left: 15%
+.daily-desc
+  color: #b3b3b3
+  font-size: 2rem
+
+.daily-day-headers
+  display: flex
+  position: absolute
+  bottom: 25px
+  margin-left: 15%
+  align-items: center
+  div
+    display: flex
+    cursor: pointer
+    p
+      font-size: 3rem
+      margin-left: .5rem
+      margin-right: .5rem
+      font-family: oleo-bold
+
+  .daily-before
+    margin-right: 2rem
+
+  .daily-after
+    margin-left: 2rem
+
+@media (min-width: 900px)
+  .daily-container
+    width: 100%
+    height: 80vh
+    justify-content: flex-start
+  .daily-header
+    margin-top: 10rem
+    margin-bottom: 5rem
+  .daily-day-headers
+    bottom: 40rem
+    margin-left: 10%
+    div
+      p
+        font-size: 2rem
+        margin-left: .5rem
+        font-family: oleo-bold
+  .daily-before
+    margin-right: 0rem !important
+
+  .daily-after
+    margin-left: 0rem !important

@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './navbar/Navbar';
-import Current from './weather-info/current/Current';
-import Daily from './weather-info/daily/Daily';
-import Hourly from './weather-info/hourly/Hourly';
-import SearchBar from './top-section/search-bar/SearchBar';
-import ImageSection from './top-section/image-section/ImageSection';
+import Navbar from '../components/navbar/Navbar';
+import Current from '../components/weather-info/current/Current';
+import Daily from '../components/weather-info/daily/Daily';
+import Hourly from '../components/weather-info/hourly/Hourly';
+import SearchBar from '../components/top-section/search-bar/SearchBar';
+import ImageSection from '../components/top-section/image-section/ImageSection';
 import './index.sass'
-import PineApples from './pineapples/PineApples';
+import PineApples from '../components/pineapples/PineApples';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import BottomDaily from '../new-components/mobile/bottem-daily/BottomDaily';
-import TopInfo from '../new-components/mobile/top-info/TopInfo';
+import BottomDaily from './mobile/bottem-daily/BottomDaily';
+import TopInfo from './mobile/top-info/TopInfo';
+import DailyDesktop from './desktop/right-column/DailyDesktop';
 
 AOS.init({
   once: true
@@ -63,11 +64,14 @@ function Index() {
         weatherLocation={weatherLocation}
         weatherCurrent={weatherCurrent}
       />
-      <BottomDaily
+      {/* <BottomDaily
         isDaily={isDaily}
         setIsDaily={setIsDaily}
         weatherForecast={weatherForecast}
-      />
+      /> */}
+
+      <DailyDesktop weatherForecast={weatherForecast} />
+
 
     </div>
   )

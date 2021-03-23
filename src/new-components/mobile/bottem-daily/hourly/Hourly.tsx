@@ -14,7 +14,7 @@ function Hourly({ weatherForecast }) {
       {weatherForecast.hour && weatherForecast.hour.map((item, id) =>
         <div className='hourly-container'>
           <p className='o-time'>{time[id]}</p>
-          
+
           <div className='inner-hourly-container'>
             <img className='o-icon' src={item.condition.icon} alt="weather icon" />
             <p className='o-text'>{item.condition.text}</p>
