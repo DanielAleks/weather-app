@@ -22,9 +22,8 @@ function Index() {
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [area, setArea]: any = useState([])
-  const [isModal, setIsModal] = useState(true)
   const [weatherForecast, setWeatherForecast]: any = useState([])
-  const [weatherPhase, setWeatherPhase]: any = useState([])
+  const [isDaily, setIsDaily] = useState(true)
 
   const YOUR_API_KEY = '32902a43900f400cae0210316210701'
   const commonNames = `https://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=${city}`
@@ -65,8 +64,11 @@ function Index() {
         weatherCurrent={weatherCurrent}
       />
       <BottomDaily
+        isDaily={isDaily}
+        setIsDaily={setIsDaily}
         weatherForecast={weatherForecast}
       />
+
     </div>
   )
 }
