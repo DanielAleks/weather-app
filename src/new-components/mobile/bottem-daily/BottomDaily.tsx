@@ -7,17 +7,14 @@ function BottomDaily({ weatherForecast, isDaily, setIsDaily }) {
   return (
     <div className='bottem-daily-container'>
       <div className='bg-bottom-daily' />
+
       <Nav setIsDaily={setIsDaily} />
 
       {isDaily &&
-        <Daily weatherForecast={weatherForecast} />
-      }
-
-      {isDaily === false ?
         <Hourly weatherForecast={weatherForecast} />
-        : null
+
+        // <Daily weatherForecast={weatherForecast} /> 
       }
-      
 
     </div>
   )

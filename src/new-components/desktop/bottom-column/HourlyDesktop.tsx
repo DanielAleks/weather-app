@@ -24,12 +24,11 @@ function
 
       <div className='hourlyD-outer-container'>
         {weatherForecast[0]?.hour && weatherForecast[0]?.hour.map((item, id) =>
-          <div className='hourlyD-inner-container'> 
-            <p className='o-time'>{time[id]}</p>
+          <div className='hourlyD-inner-container'>
+            <p className='D-time'>{time[id]}</p>
             <hr className='hourlyD-hr' color='white' />
-            <img className='o-icon' src={item.condition.icon} alt="weather-icon" />
-            <p className='o-temp'>{item.temp_f}F°</p>
-            {/* <p className='o-text'>{item.condition.text}</p> */}
+            <img className='D-icon' src={item.condition.icon} alt="weather-icon" />
+            <p className='D-temp'>{item.temp_f}F°</p>
           </div>
         )}
       </div>

@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../components/navbar/Navbar';
-import Current from '../components/weather-info/current/Current';
-import Daily from '../components/weather-info/daily/Daily';
-import Hourly from '../components/weather-info/hourly/Hourly';
-import SearchBar from '../components/top-section/search-bar/SearchBar';
-import ImageSection from '../components/top-section/image-section/ImageSection';
-import './index.sass'
-import PineApples from '../components/pineapples/PineApples';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import BottomDaily from './mobile/bottem-daily/BottomDaily';
 import TopInfo from './mobile/top-info/TopInfo';
 import DailyDesktop from './desktop/right-column/DailyDesktop';
 import HourlyDesktop from './desktop/bottom-column/HourlyDesktop';
 import NavDesktop from './desktop/nav/NavDesktop';
+import './index.sass'
 
-AOS.init({
-  once: true
-});
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
 
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
+}
 
 function Index() {
+  const size = useWindowSize()
   const [city, setCity]: any = useState('Washington')
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
@@ -48,7 +56,7 @@ function Index() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
     setWeatherForecast(data.forecast && data.forecast.forecastday)
-    
+
   }
 
   useEffect(() => {
@@ -59,20 +67,28 @@ function Index() {
 
   return (
     <div className='project-container'>
-      <div className='bg-main-index' />
-      <TopInfo
-        weatherLocation={weatherLocation}
-        weatherCurrent={weatherCurrent}
-      />
-      {/* <BottomDaily
-        isDaily={isDaily}
-        setIsDaily={setIsDaily}
-        weatherForecast={weatherForecast}
-      />                 */}
+      <div className='bg-main-index' >
 
-      <NavDesktop/>
-      <DailyDesktop weatherForecast={weatherForecast} />
-      <HourlyDesktop weatherForecast={weatherForecast}/>
+        <TopInfo
+          weatherLocation={weatherLocation}
+          weatherCurrent={weatherCurrent}
+        />
+        {size.width < 1000 &&
+          <BottomDaily
+            isDaily={isDaily}
+            setIsDaily={setIsDaily}
+            weatherForecast={weatherForecast}
+          />
+        }
+
+        {/* {size.width > 1000 &&
+          <>
+            <NavDesktop />
+            <DailyDesktop weatherForecast={weatherForecast} />
+            <HourlyDesktop weatherForecast={weatherForecast} />
+          </>
+        } */}
+      </div>
     </div>
   )
 }

@@ -1,16 +1,21 @@
 .top-container
-  padding-left: 5rem
-  position: absolute
+  z-index: 3030303003
+  width: 100%
+  height: 30rem
+  background: rgba(159, 96, 0, .3)
+
+.top-inner-container
+  margin-left: 5rem
 
 .top-icon
-  height: 15rem
-  width: 15rem
+  height: 12rem
+  width: 12rem
   margin-top: 3rem
   margin-left: -20px
 
 .top-desc
   font-size: 2rem
-  margin-top: -20px
+  margin-top: -15px
   font-family: nunito-reg
   color: #c0c0c0
 
@@ -27,9 +32,8 @@
 
 .top-temp
   position: absolute
-  top: 2rem
-  right: 5rem
-  margin-top: 2rem
+  top: 4rem
+  right: 3rem
   font-size: 6rem
   color: #c0c0c0
   font-family: oleo-bold
@@ -38,7 +42,10 @@
   width: 30rem
   max-height: .05rem
 
-@media (min-width: 900px)
+@media (min-width: 1000px)
   .top-temp
     position: relative
     margin-left: 5rem
+  .top-icon
+    height: 15rem
+    width: 15rem

@@ -12,7 +12,7 @@ function Nav({ setIsDaily }) {
 
           </div>
         </div>
-      </div>
+      </div> 
  
       <div>
         <input className='nav-input' type="text" placeholder='     Find your Location...' />

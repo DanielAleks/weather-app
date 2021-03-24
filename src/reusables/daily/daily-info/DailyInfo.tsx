@@ -13,7 +13,7 @@ function DailyInfo({ item }: any) {
           <p>Rain:</p>
           <p>Wind Speed:</p>
           <p>Precipitation:</p>
-        </div>
+        </div> 
 
         <div className='daily-info-p'>
           <p>{item[1]?.day.avghumidity}%</p>

@@ -1,3 +1,4 @@
+import React from 'react'
 import './hourly.sass'
 
 function Hourly({ weatherForecast }) {
@@ -11,8 +12,8 @@ function Hourly({ weatherForecast }) {
 
   return (
     <div className='hourly-outer-container'>
-      {weatherForecast.hour && weatherForecast.hour.map((item, id) =>
-        <div className='hourly-container'>
+      { weatherForecast[0]?.hour.map((item, id) =>
+        <div className='hourlyy-container'>
           <p className='o-time'>{time[id]}</p>
 
           <div className='inner-hourly-container'>
