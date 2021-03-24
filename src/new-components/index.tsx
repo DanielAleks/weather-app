@@ -12,6 +12,8 @@ import 'aos/dist/aos.css';
 import BottomDaily from './mobile/bottem-daily/BottomDaily';
 import TopInfo from './mobile/top-info/TopInfo';
 import DailyDesktop from './desktop/right-column/DailyDesktop';
+import HourlyDesktop from './desktop/bottom-column/HourlyDesktop';
+import NavDesktop from './desktop/nav/NavDesktop';
 
 AOS.init({
   once: true
@@ -68,11 +70,11 @@ function Index() {
         isDaily={isDaily}
         setIsDaily={setIsDaily}
         weatherForecast={weatherForecast}
-      /> */}
+      />                 */}
 
+      <NavDesktop/>
       <DailyDesktop weatherForecast={weatherForecast} />
-
-
+      <HourlyDesktop weatherForecast={weatherForecast}/>
     </div>
   )
 }
