@@ -21,7 +21,7 @@ AOS.init({
 
 
 function Index() {
-  const [city, setCity]: any = useState('London')
+  const [city, setCity]: any = useState('Washington')
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [area, setArea]: any = useState([])
@@ -38,8 +38,6 @@ function Index() {
     const data = await fetchedWeatherData.json()
     setWeatherLocation(data.location)
     setWeatherCurrent(data.current)
-    console.log(data, 'current DATA DANIEL')
-
   }
   async function places() {
     const fetchedWeatherData = await fetch(commonNames)
@@ -49,8 +47,8 @@ function Index() {
   async function weatherForcast() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
-    setWeatherForecast(data.forecast && data.forecast.forecastday[1])
-    console.log(data, 'weekThree DATA DANIEL')
+    setWeatherForecast(data.forecast && data.forecast.forecastday)
+    
   }
 
   useEffect(() => {

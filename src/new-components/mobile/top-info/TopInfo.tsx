@@ -14,3 +14,4 @@ function TopInfo({ weatherLocation, weatherCurrent }) {
 } 
 
 export default TopInfo
+ 
