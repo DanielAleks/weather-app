@@ -27,14 +27,14 @@ function useWindowSize() {
   return windowSize;
 }
 
-function Index() {
+function Index({ city, setCity, imageState, whichImage }) {
   const size = useWindowSize()
-  const [city, setCity]: any = useState('Washington')
   const [weatherLocation, setWeatherLocation]: any = useState([])
   const [weatherCurrent, setWeatherCurrent]: any = useState([])
   const [area, setArea]: any = useState([])
   const [weatherForecast, setWeatherForecast]: any = useState([])
   const [isDaily, setIsDaily] = useState(true)
+  const [isModal, setIsModal] = useState(false)
 
   const YOUR_API_KEY = '32902a43900f400cae0210316210701'
   const commonNames = `https://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=${city}`
@@ -69,6 +69,8 @@ function Index() {
     <div className='project-container'>
       <div className='bg-main-index' >
 
+        <img className='dynamic-image' src={imageState} alt="image-failed" />
+
         <TopInfo
           weatherLocation={weatherLocation}
           weatherCurrent={weatherCurrent}
@@ -83,7 +85,15 @@ function Index() {
 
         {size.width > 1000 &&
           <>
-            <NavDesktop />
+            <NavDesktop
+              whichImage={whichImage}
+              area={area}
+              weather={weather}
+              setCity={setCity}
+              city={city}
+              setIsModal={setIsModal}
+              isModal={isModal}
+            />
             <DailyDesktop weatherForecast={weatherForecast} />
             <HourlyDesktop weatherForecast={weatherForecast} />
           </>

@@ -12,30 +12,6 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
     setIsModal(false)
   }
 
-  async function fetchImage() {
-
-    // fetch(`./places.json`, {
-    //   headers : { 
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json'
-    //    }
-
-    // })
-    // .then((response) => response.json())
-    // .then((messages) => {console.log("messages");});
-
-    const theImage = await fetch('places.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-
-    })
-    const data = await theImage.json()
-    setImageState(data)
-    console.log(imageState, 'hello Im the ImageState. NICE TO MEET YOU!')
-  }
-
   const focusInput = (inputRef) => {
     inputRef.current.focus()
     setIsModal(true)
@@ -43,7 +19,6 @@ function ImageSection({ weather, setCity, setIsModal, city, area, isModal }) {
 
   useEffect(() => {
     focusInput(inputRef)
-    fetchImage()
   }, [])
 
   useEffect(() => {

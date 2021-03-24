@@ -23,7 +23,7 @@ function
       </div>
 
       <div className='hourlyD-outer-container'>
-        {weatherForecast[0]?.hour && weatherForecast[0]?.hour.map((item, id) =>
+        {weatherForecast && weatherForecast[0]?.hour.map((item, id) =>
           <div className='hourlyD-inner-container'>
             <p className='D-time'>{time[id]}</p>
             <hr className='hourlyD-hr' color='white' />

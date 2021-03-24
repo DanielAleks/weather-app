@@ -16,23 +16,23 @@ function DailyInfo({ item }: any) {
         </div> 
 
         <div className='daily-info-p'>
-          <p>{item[1]?.day.avghumidity}%</p>
-          <p>{item[1]?.day.mintemp_f}F°</p>
-          <p>{item[1]?.day.maxtemp_f}F°</p>
-          <p>{item[1]?.day.daily_chance_of_rain}%</p>
-          <p>{item[1]?.day.maxwind_mph}mph</p>
-          <p>{item[1]?.day.totalprecip_in}in.</p>
+          <p>{item && item[1]?.day.avghumidity}%</p>
+          <p>{item && item[1]?.day.mintemp_f}F°</p>
+          <p>{item && item[1]?.day.maxtemp_f}F°</p>
+          <p>{item && item[1]?.day.daily_chance_of_rain}%</p>
+          <p>{item && item[1]?.day.maxwind_mph}mph</p>
+          <p>{item && item[1]?.day.totalprecip_in}in.</p>
         </div>
       </div>
 
       <div className='daily-day-headers'>
         <div className='daily-before'>
           <IoIosArrowBack size={30} color='#e6e6e6' />
-          <p>{item[0]?.date}</p>
+          <p>{item && item[0]?.date}</p>
         </div>
 
         <div className='daily-after'>
-          <p>{item[2]?.date}</p>
+          <p>{item && item[2]?.date}</p>
           <IoIosArrowForward size={30} color='#e6e6e6' />
         </div>
       </div>
