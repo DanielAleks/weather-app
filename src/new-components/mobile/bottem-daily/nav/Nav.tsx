@@ -7,17 +7,13 @@ function Nav({ setIsDaily }) {
 
       <div className='setting-toggle-container'>
         <p>Daily</p>
-        <div onClick={() => setIsDaily(false)} className='outer-box'>
-          <div className='inner-box'>
-
-          </div>
+        <div onClick={() => setIsDaily(prev => !prev)} className='outer-box'>
+          <div className='inner-box' />
         </div>
-      </div> 
- 
-      <div>
-        <input className='nav-input' type="text" placeholder='     Find your Location...' />
-        <button className='nav-button' >Search</button>
       </div>
+
+      <input className='nav-input' type="text" placeholder='Search a Location...' />
+      <button className='nav-button' >Search</button>
     </div>
   )
 }

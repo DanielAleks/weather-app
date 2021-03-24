@@ -81,13 +81,13 @@ function Index() {
           />
         }
 
-        {/* {size.width > 1000 &&
+        {size.width > 1000 &&
           <>
             <NavDesktop />
             <DailyDesktop weatherForecast={weatherForecast} />
             <HourlyDesktop weatherForecast={weatherForecast} />
           </>
-        } */}
+        }
       </div>
     </div>
   )

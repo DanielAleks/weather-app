@@ -11,11 +11,11 @@ function BottomDaily({ weatherForecast, isDaily, setIsDaily }) {
       <Nav setIsDaily={setIsDaily} />
 
       {isDaily &&
-        <Hourly weatherForecast={weatherForecast} />
-
-        // <Daily weatherForecast={weatherForecast} /> 
+        <Daily weatherForecast={weatherForecast} />
       }
-
+      {!isDaily &&
+        <Hourly weatherForecast={weatherForecast} />
+      }
     </div>
   )
 }

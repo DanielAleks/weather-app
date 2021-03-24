@@ -61,9 +61,19 @@
   .daily-container
     height: 80vh
   .daily-header
-    margin-top: 10rem
+    margin-top: 0px
     margin-bottom: 5rem
   .daily-before
     width: 100px
   .daily-after
     width: 100px
+
+@media (max-height: 800px)
+  .daily-container
+    justify-content: flex-start
+    margin-top: 10px
+
+@media (max-height: 750px)
+  .daily-container
+    height: 60vh
+    overflow-x: hidden

@@ -11,18 +11,20 @@ function Hourly({ weatherForecast }) {
   ]
 
   return (
-    <div className='hourly-outer-container'>
-      { weatherForecast[0]?.hour.map((item, id) =>
-        <div className='hourlyy-container'>
-          <p className='o-time'>{time[id]}</p>
+    <div className='hourly-omni-container'>
+      <div className='hourly-outer-container'>
+        {weatherForecast[0]?.hour.map((item, id) =>
+          <div className='hourlyy-container'>
+            <p className='o-time'>{time[id]}</p>
 
-          <div className='inner-hourly-container'>
-            <img className='o-icon' src={item.condition.icon} alt="weather icon" />
-            <p className='o-text'>{item.condition.text}</p>
+            <div className='inner-hourly-container'>
+              <img className='o-icon' src={item.condition.icon} alt="weather icon" />
+              <p className='o-text'>{item.condition.text}</p>
+            </div>
+            <p className='o-temp'>{item.temp_f}F°</p>
           </div>
-          <p className='o-temp'>{item.temp_f}F°</p>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
