@@ -68,9 +68,9 @@ function Index({ city, setCity, imageState, whichImage }) {
     setWeatherForecast(data.forecast && data.forecast.forecastday)
   }
 
-useEffect(() => {
-  accessorLimits()
-}, [accessor])
+  useEffect(() => {
+    accessorLimits()
+  }, [accessor])
 
   useEffect(() => {
     weather()
@@ -91,10 +91,17 @@ useEffect(() => {
         />
         {size.width < 1000 &&
           <BottomDaily
+            city={city}
+            setIsModal={setIsModal}
+            setCity={setCity}
+            weather={weather}
+            isModal={isModal}
+            area={area}
+            whichImage={whichImage}
+            setIsDaily={setIsDaily}
             accessor={accessor}
             setAccessor={setAccessor}
             isDaily={isDaily}
-            setIsDaily={setIsDaily}
             weatherForecast={weatherForecast}
           />
         }

@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './nav.sass'
+import '../../../desktop/nav/x-dropdown-menu.sass'
 
-function Nav({ setIsDaily }) {
+function Nav({ setIsDaily, city, setIsModal, setCity, weather, isModal, area, whichImage }) {
+  const inputRef = useRef()
+  const buttonRef = useRef()
+
+  const focusButton = (buttonRef) => {
+    buttonRef.current.focus()
+    setIsModal(false)
+  }
+
+  const focusInput = (inputRef) => {
+    inputRef.current.focus()
+    setIsModal(true)
+  }
+
+  useEffect(() => {
+    focusInput(inputRef)
+  }, [])
+
+  useEffect(() => {
+    whichImage()
+  }, [city])
+
+
   return (
     <div className='nav-container'>
 
@@ -12,8 +35,35 @@ function Nav({ setIsDaily }) {
         </div>
       </div>
 
-      <input className='nav-input' type="text" placeholder='Search a Location...' />
-      <button className='nav-button' >Search</button>
+      <input
+        placeholder='Search a Location...'
+        type="text"
+        value={city}
+        ref={inputRef}
+        onClick={() => setIsModal(true)}
+        className='long-input nav-input'
+        onChange={(e) => setCity(e.target.value)}
+      />
+      <button ref={buttonRef}
+        className='nav-button'
+        onClick={() => {
+          weather()
+          setIsModal(false)
+        }}>Search</button>
+
+      <div className='input-dropdown'>
+        {area.length >= 3 && isModal &&
+          area.map((item) => 
+            <div onClick={() => {
+              setCity(item.name)
+              weather()
+              focusButton(buttonRef)
+            }}
+              className='possible-locations-btn'>
+              {item.name}
+            </div>
+          )}
+      </div>
     </div>
   )
 }
@@ -22,31 +72,4 @@ export default Nav
 
 // {area.length <= 3 &&
 //   <p className='error-length'>not enough letters</p>}
-// <input
-//   type="text"
-//   value={city} 
-//   ref={inputRef}
-//   onClick={() => setIsModal(true)}
-//   className='long-input'
-//   placeholder='Search a Location'
-//   onChange={(e) => setCity(e.target.value)}
-// />
-// <button ref={buttonRef} onClick={() => {
-//   weather()
-//   setIsModal(false)
-// }}>Search</button>
 
-// <div className='input-dropdown'>
-//   {area.length >= 3 && isModal &&
-//     area.map((item) =>
-//       <div onClick={() => {
-//         setCity(item.name)
-//         weather()
-//         focusButton(buttonRef)
-//       }}
-//         className='possible-locations-btn'>
-//         {item.name}
-//       </div>
-//     )}
-// </div>
-// </div>
