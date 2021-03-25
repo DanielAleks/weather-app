@@ -17,6 +17,7 @@ function BottomDaily({ weatherForecast, isDaily, accessor, setAccessor, setIsDai
         area={area}
         whichImage={whichImage}
         setIsDaily={setIsDaily}
+        isDaily={isDaily}
       />
 
       {isDaily &&

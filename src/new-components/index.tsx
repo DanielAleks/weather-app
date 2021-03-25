@@ -5,6 +5,7 @@ import DailyDesktop from './desktop/right-column/DailyDesktop';
 import HourlyDesktop from './desktop/bottom-column/HourlyDesktop';
 import NavDesktop from './desktop/nav/NavDesktop';
 import './index.sass'
+import Desktop from './desktop';
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -108,7 +109,7 @@ function Index({ city, setCity, imageState, whichImage }) {
 
         {size.width > 1000 &&
           <>
-            <NavDesktop
+            <Desktop
               whichImage={whichImage}
               area={area}
               weather={weather}
@@ -116,13 +117,11 @@ function Index({ city, setCity, imageState, whichImage }) {
               city={city}
               setIsModal={setIsModal}
               isModal={isModal}
-            />
-            <DailyDesktop
               weatherForecast={weatherForecast}
               accessor={accessor}
               setAccessor={setAccessor}
             />
-            <HourlyDesktop weatherForecast={weatherForecast} />
+
           </>
         }
       </div>
