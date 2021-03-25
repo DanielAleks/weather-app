@@ -35,6 +35,15 @@ function Index({ city, setCity, imageState, whichImage }) {
   const [weatherForecast, setWeatherForecast]: any = useState([])
   const [isDaily, setIsDaily] = useState(true)
   const [isModal, setIsModal] = useState(false)
+  const [accessor, setAccessor] = useState(1)
+
+  const accessorLimits = () => {
+    if (accessor === - 1) {
+      setAccessor(0)
+    } else if (accessor === 3) {
+      setAccessor(2)
+    }
+  }
 
   const YOUR_API_KEY = '32902a43900f400cae0210316210701'
   const commonNames = `https://api.weatherapi.com/v1/search.json?key=${YOUR_API_KEY}&q=${city}`
@@ -52,17 +61,22 @@ function Index({ city, setCity, imageState, whichImage }) {
     const data = await fetchedWeatherData.json()
     setArea(data)
   }
+
   async function weatherForcast() {
     const fetchedWeatherData = await fetch(weekThree)
     const data = await fetchedWeatherData.json()
     setWeatherForecast(data.forecast && data.forecast.forecastday)
-
   }
+
+useEffect(() => {
+  accessorLimits()
+}, [accessor])
 
   useEffect(() => {
     weather()
     places()
     weatherForcast()
+    whichImage()
   }, [city])
 
   return (
@@ -77,6 +91,8 @@ function Index({ city, setCity, imageState, whichImage }) {
         />
         {size.width < 1000 &&
           <BottomDaily
+            accessor={accessor}
+            setAccessor={setAccessor}
             isDaily={isDaily}
             setIsDaily={setIsDaily}
             weatherForecast={weatherForecast}
@@ -94,7 +110,11 @@ function Index({ city, setCity, imageState, whichImage }) {
               setIsModal={setIsModal}
               isModal={isModal}
             />
-            <DailyDesktop weatherForecast={weatherForecast} />
+            <DailyDesktop
+              weatherForecast={weatherForecast}
+              accessor={accessor}
+              setAccessor={setAccessor}
+            />
             <HourlyDesktop weatherForecast={weatherForecast} />
           </>
         }

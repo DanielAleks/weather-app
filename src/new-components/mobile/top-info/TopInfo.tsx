@@ -11,7 +11,7 @@ function TopInfo({ weatherLocation, weatherCurrent }) {
         <p className='top-local'>{weatherLocation && weatherLocation?.localtime}</p>
         <p className='top-temp'>{weatherCurrent && weatherCurrent.temp_f}F°</p>
       </div>
-    </div>
+    </div> 
   )
 }
 

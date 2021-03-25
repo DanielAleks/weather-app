@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Index from './new-components';
 import './App.css';
 import './style.sass'
 
 function App() {
-  const [city, setCity]: any = useState('Argentina')
+  const [city, setCity]: any = useState('california')
   const [imageState, setImageState] = useState('')
+
+  const cityUSAHandler = () => {
+    if (city.split(" ")[city.split(" ").length - 1] === 'America') {
+      setCity(city.split(" ")[city.split(" ").length - 5])
+    }
+  }
+
+  useEffect(() => {
+    cityUSAHandler()
+  }, [city])
 
   const whichImage = () => {
     switch (city.split(" ")[city.toLowerCase().split(" ").length - 1]) {
@@ -130,54 +140,186 @@ function App() {
       case 'Uruguay': setImageState('https://images.pexels.com/photos/5656257/pexels-photo-5656257.jpeg?cs=srgb&dl=pexels-alex-brites-5656257.jpg&fm=jpg'); break;
       case 'Uzbekistan': setImageState('https://images.pexels.com/photos/5869122/pexels-photo-5869122.jpeg?cs=srgb&dl=pexels-abdullah-aydin-5869122.jpg&fm=jpg'); break;
       case 'Vietnam': setImageState('https://images.pexels.com/photos/2582757/pexels-photo-2582757.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-2582757.jpg&fm=jpg'); break;
-      case 'Alabama': setImageState('https://images.pexels.com/photos/220324/pexels-photo-220324.jpeg?cs=srgb&dl=pexels-pixabay-220324.jpg&fm=jpg'); break;
-      case 'Alaska': setImageState('https://images.pexels.com/photos/35637/alaska-glacier-ice-mountains.jpg?cs=srgb&dl=pexels-pixabay-35637.jpg&fm=jpg'); break;
-      case 'Arizona': setImageState('https://images.pexels.com/photos/414136/pexels-photo-414136.jpeg?cs=srgb&dl=pexels-pixabay-414136.jpg&fm=jpg'); break;
-      case 'Arkansas': setImageState('https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?cs=srgb&dl=pexels-luis-dalvan-1770809.jpg&fm=jpg'); break;
-      case 'California': setImageState('https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?cs=srgb&dl=pexels-pixabay-208745.jpg&fm=jpg'); break;
-      case 'Colorado': setImageState('https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?cs=srgb&dl=pexels-pixabay-221502.jpg&fm=jpg'); break;
-      case 'Delaware': setImageState('https://images.pexels.com/photos/1529746/pexels-photo-1529746.jpeg?cs=srgb&dl=pexels-craig-adderley-1529746.jpg&fm=jpg'); break;
-      case 'Florida': setImageState('https://images.pexels.com/photos/105950/pexels-photo-105950.jpeg?cs=srgb&dl=pexels-valentina-rossoni-105950.jpg&fm=jpg'); break;
-      case 'Georgia': setImageState('https://images.pexels.com/photos/2990775/pexels-photo-2990775.jpeg?cs=srgb&dl=pexels-tom%C3%A1%C5%A1-mal%C3%ADk-2990775.jpg&fm=jpg'); break;
-      case 'Hawaii': setImageState('https://images.pexels.com/photos/2526044/pexels-photo-2526044.jpeg?cs=srgb&dl=pexels-matthew-devries-2526044.jpg&fm=jpg'); break;
-      case 'Idaho': setImageState('https://images.pexels.com/photos/937524/pexels-photo-937524.jpeg?cs=srgb&dl=pexels-brett-sayles-937524.jpg&fm=jpg'); break;
-      case 'Illinois': setImageState('https://images.pexels.com/photos/2589011/pexels-photo-2589011.jpeg?cs=srgb&dl=pexels-trace-hudson-2589011.jpg&fm=jpg'); break;
-      case 'Indiana': setImageState('https://images.pexels.com/photos/3573383/pexels-photo-3573383.jpeg?cs=srgb&dl=pexels-josh-hild-3573383.jpg&fm=jpg'); break;
-      case 'Iowa': setImageState('https://images.pexels.com/photos/236541/pexels-photo-236541.jpeg?cs=srgb&dl=pexels-pixabay-236541.jpg&fm=jpg'); break;
-      case 'Kansas': setImageState('https://images.pexels.com/photos/349506/pexels-photo-349506.jpeg?cs=srgb&dl=pexels-andrew-peterson-349506.jpg&fm=jpg'); break;
-      case 'Kentucky': setImageState('https://images.pexels.com/photos/2042161/pexels-photo-2042161.jpeg?cs=srgb&dl=pexels-brandon-randolph-2042161.jpg&fm=jpg'); break;
-      case 'Louisiana': setImageState('https://images.pexels.com/photos/3908304/pexels-photo-3908304.jpeg?cs=srgb&dl=pexels-sophia-3908304.jpg&fm=jpg'); break;
-      case 'Maine': setImageState('https://images.pexels.com/photos/5372828/pexels-photo-5372828.jpeg?cs=srgb&dl=pexels-kristina-gain-5372828.jpg&fm=jpg'); break;
-      case 'Maryland': setImageState('https://images.pexels.com/photos/4426312/pexels-photo-4426312.jpeg?cs=srgb&dl=pexels-lapography-4426312.jpg&fm=jpg'); break;
-      case 'Massachusetts': setImageState('https://images.pexels.com/photos/5627116/pexels-photo-5627116.jpeg?cs=srgb&dl=pexels-andr%C3%A9s-garc%C3%ADa-5627116.jpg&fm=jpg'); break;
-      case 'Michigan': setImageState('https://images.pexels.com/photos/702343/pexels-photo-702343.jpeg?cs=srgb&dl=pexels-anon-702343.jpg&fm=jpg'); break;
-      case 'Minnesota': setImageState('https://images.pexels.com/photos/4190056/pexels-photo-4190056.jpeg?cs=srgb&dl=pexels-josh-hild-4190056.jpg&fm=jpg'); break;
-      case 'Mississippi': setImageState('https://images.pexels.com/photos/4320303/pexels-photo-4320303.jpeg?cs=srgb&dl=pexels-josh-hild-4320303.jpg&fm=jpg'); break;
-      case 'Missouri': setImageState('https://images.pexels.com/photos/5147543/pexels-photo-5147543.jpeg?cs=srgb&dl=pexels-michael-gattorna-5147543.jpg&fm=jpg'); break;
-      case 'Montana': setImageState('https://images.pexels.com/photos/534398/pexels-photo-534398.jpeg?cs=srgb&dl=pexels-kerry-534398.jpg&fm=jpg'); break;
-      case 'Nebraska': setImageState('https://images.pexels.com/photos/776614/pexels-photo-776614.jpeg?cs=srgb&dl=pexels-tonya-kumpula-776614.jpg&fm=jpg'); break;
-      case 'Nevada': setImageState('https://images.pexels.com/photos/258118/pexels-photo-258118.jpeg?cs=srgb&dl=pexels-pixabay-258118.jpg&fm=jpg'); break;
-      case 'Hampshire': setImageState('https://images.pexels.com/photos/2089977/pexels-photo-2089977.jpeg?cs=srgb&dl=pexels-leah-kelley-2089977.jpg&fm=jpg'); break;
-      case 'Jersey': setImageState('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?cs=srgb&dl=pexels-quintin-gellar-313782.jpg&fm=jpg'); break;
-      case 'Mexico': setImageState('https://images.pexels.com/photos/2440079/pexels-photo-2440079.jpeg?cs=srgb&dl=pexels-ian-beckley-2440079.jpg&fm=jpg'); break;
-      case 'York': setImageState('https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?cs=srgb&dl=pexels-roberto-vivancos-2190283.jpg&fm=jpg'); break;
-      case 'Carolina': setImageState('https://images.pexels.com/photos/733162/pexels-photo-733162.jpeg?cs=srgb&dl=pexels-iconcom-733162.jpg&fm=jpg'); break;
-      case 'Dakota': setImageState('https://images.pexels.com/photos/4558580/pexels-photo-4558580.jpeg?cs=srgb&dl=pexels-matheus-bertelli-4558580.jpg&fm=jpg'); break;
-      case 'Ohio': setImageState('https://images.pexels.com/photos/290120/pexels-photo-290120.jpeg?cs=srgb&dl=pexels-pixabay-290120.jpg&fm=jpg'); break;
-      case 'Oklahoma': setImageState('https://images.pexels.com/photos/4814534/pexels-photo-4814534.jpeg?cs=srgb&dl=pexels-raychel-sanner-4814534.jpg&fm=jpg'); break;
-      case 'Oregon': setImageState('https://images.pexels.com/photos/2291427/pexels-photo-2291427.jpeg?cs=srgb&dl=pexels-elijah-akala-2291427.jpg&fm=jpg'); break;
-      case 'Pennsylvania': setImageState('https://images.pexels.com/photos/4642501/pexels-photo-4642501.jpeg?cs=srgb&dl=pexels-kelly-lacy-4642501.jpg&fm=jpg'); break;
-      case 'Carolina': setImageState('https://images.pexels.com/photos/5679217/pexels-photo-5679217.jpeg?cs=srgb&dl=pexels-gapeppy-5679217.jpg&fm=jpg'); break;
-      case 'Dakota': setImageState('https://images.pexels.com/photos/4194067/pexels-photo-4194067.jpeg?cs=srgb&dl=pexels-samuel-karle-4194067.jpg&fm=jpg'); break;
-      case 'Tennessee': setImageState('https://images.pexels.com/photos/2350459/pexels-photo-2350459.jpeg?cs=srgb&dl=pexels-kelly-lacy-2350459.jpg&fm=jpg'); break;
-      case 'Texas': setImageState('https://images.unsplash.com/photo-1586794000129-536f1bc43cca?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'); break;
-      case 'Utah': setImageState('https://images.pexels.com/photos/62600/pexels-photo-62600.jpeg?cs=srgb&dl=pexels-chris-janda-62600.jpg&fm=jpg'); break;
-      case 'Vermont': setImageState('https://images.pexels.com/photos/189243/pexels-photo-189243.jpeg?cs=srgb&dl=pexels-william-alexander-189243.jpg&fm=jpg'); break;
-      case 'Virginia': setImageState('https://images.pexels.com/photos/5692812/pexels-photo-5692812.jpeg?cs=srgb&dl=pexels-bryant%27s-juarez-5692812.jpg&fm=jpg'); break;
-      case 'Washington': setImageState('https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?cs=srgb&dl=pexels-chait-goli-1796730.jpg&fm=jpg'); break;
-      case 'Virginia': setImageState('https://images.pexels.com/photos/322681/pexels-photo-322681.jpeg?cs=srgb&dl=pexels-jessica-monte-322681.jpg&fm=jpg'); break;
-      case 'Wisconsin': setImageState('https://images.pexels.com/photos/4557960/pexels-photo-4557960.jpeg?cs=srgb&dl=pexels-todd-trapani-4557960.jpg&fm=jpg'); break;
-      case 'Wyoming': setImageState('https://images.pexels.com/photos/4227153/pexels-photo-4227153.jpeg?cs=srgb&dl=pexels-todd-trapani-4227153.jpg&fm=jpg'); break;
+      case 'alabama': 
+      case 'Alabama,':
+      case 'Alabama':
+        setImageState('https://images.pexels.com/photos/220324/pexels-photo-220324.jpeg?cs=srgb&dl=pexels-pixabay-220324.jpg&fm=jpg'); break;
+      case 'alaska': 
+      case 'Alaska,':
+      case 'Alaska':
+        setImageState('https://images.pexels.com/photos/35637/alaska-glacier-ice-mountains.jpg?cs=srgb&dl=pexels-pixabay-35637.jpg&fm=jpg'); break;
+      case 'arizona': 
+      case 'Arizona,':
+      case 'Arizona':
+        setImageState('https://images.pexels.com/photos/414136/pexels-photo-414136.jpeg?cs=srgb&dl=pexels-pixabay-414136.jpg&fm=jpg'); break;
+      case 'arkansas': 
+      case 'Arkansas,':
+      case 'Arkansas':
+        setImageState('https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?cs=srgb&dl=pexels-luis-dalvan-1770809.jpg&fm=jpg'); break;
+      case 'california': 
+      case 'California,':
+      case 'California':
+        setImageState('https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg?cs=srgb&dl=pexels-pixabay-208745.jpg&fm=jpg'); break;
+      case 'colorado': 
+      case 'Colorado,':
+      case 'Colorado':
+        setImageState('https://images.pexels.com/photos/221502/pexels-photo-221502.jpeg?cs=srgb&dl=pexels-pixabay-221502.jpg&fm=jpg'); break;
+      case 'delaware': 
+      case 'Delaware,':
+      case 'Delaware':
+        setImageState('https://images.pexels.com/photos/1529746/pexels-photo-1529746.jpeg?cs=srgb&dl=pexels-craig-adderley-1529746.jpg&fm=jpg'); break;
+      case 'florida': 
+      case 'Florida,':
+      case 'Florida':
+        setImageState('https://images.pexels.com/photos/105950/pexels-photo-105950.jpeg?cs=srgb&dl=pexels-valentina-rossoni-105950.jpg&fm=jpg'); break;
+      case 'georgia': 
+      case 'Georgia,':
+      case 'Georgia':
+        setImageState('https://images.pexels.com/photos/2990775/pexels-photo-2990775.jpeg?cs=srgb&dl=pexels-tom%C3%A1%C5%A1-mal%C3%ADk-2990775.jpg&fm=jpg'); break;
+      case 'hawaii': 
+      case 'Hawaii,':
+      case 'Hawaii':
+        setImageState('https://images.pexels.com/photos/2526044/pexels-photo-2526044.jpeg?cs=srgb&dl=pexels-matthew-devries-2526044.jpg&fm=jpg'); break;
+      case 'idaho': 
+      case 'Idaho,':
+      case 'Idaho':
+        setImageState('https://images.pexels.com/photos/937524/pexels-photo-937524.jpeg?cs=srgb&dl=pexels-brett-sayles-937524.jpg&fm=jpg'); break;
+      case 'illinois': 
+      case 'Illinois,':
+      case 'Illinois':
+        setImageState('https://images.pexels.com/photos/2589011/pexels-photo-2589011.jpeg?cs=srgb&dl=pexels-trace-hudson-2589011.jpg&fm=jpg'); break;
+      case 'indiana': 
+      case 'Indiana,':
+      case 'Indiana':
+        setImageState('https://images.pexels.com/photos/3573383/pexels-photo-3573383.jpeg?cs=srgb&dl=pexels-josh-hild-3573383.jpg&fm=jpg'); break;
+      case 'iowa': 
+      case 'Iowa,':
+      case 'Iowa':
+        setImageState('https://images.pexels.com/photos/236541/pexels-photo-236541.jpeg?cs=srgb&dl=pexels-pixabay-236541.jpg&fm=jpg'); break;
+      case 'kansas': 
+      case 'Kansas,':
+      case 'Kansas':
+        setImageState('https://images.pexels.com/photos/349506/pexels-photo-349506.jpeg?cs=srgb&dl=pexels-andrew-peterson-349506.jpg&fm=jpg'); break;
+      case 'kentucky': 
+      case 'Kentucky,':
+      case 'Kentucky':
+        setImageState('https://images.pexels.com/photos/2042161/pexels-photo-2042161.jpeg?cs=srgb&dl=pexels-brandon-randolph-2042161.jpg&fm=jpg'); break;
+      case 'louisiana': 
+      case 'Louisiana,':
+      case 'Louisiana':
+        setImageState('https://images.pexels.com/photos/3908304/pexels-photo-3908304.jpeg?cs=srgb&dl=pexels-sophia-3908304.jpg&fm=jpg'); break;
+      case 'maine': 
+      case 'Maine,':
+      case 'Maine':
+        setImageState('https://images.pexels.com/photos/5372828/pexels-photo-5372828.jpeg?cs=srgb&dl=pexels-kristina-gain-5372828.jpg&fm=jpg'); break;
+      case 'maryland': 
+      case 'Maryland,':
+      case 'Maryland':
+        setImageState('https://images.pexels.com/photos/4426312/pexels-photo-4426312.jpeg?cs=srgb&dl=pexels-lapography-4426312.jpg&fm=jpg'); break;
+      case 'massachusetts': 
+      case 'Massachusetts,':
+      case 'Massachusetts':
+        setImageState('https://images.pexels.com/photos/5627116/pexels-photo-5627116.jpeg?cs=srgb&dl=pexels-andr%C3%A9s-garc%C3%ADa-5627116.jpg&fm=jpg'); break;
+      case 'michigan': 
+      case 'Michigan,':
+      case 'Michigan':
+        setImageState('https://images.pexels.com/photos/702343/pexels-photo-702343.jpeg?cs=srgb&dl=pexels-anon-702343.jpg&fm=jpg'); break;
+      case 'minnesota': 
+      case 'Minnesota,':
+      case 'Minnesota':
+        setImageState('https://images.pexels.com/photos/4190056/pexels-photo-4190056.jpeg?cs=srgb&dl=pexels-josh-hild-4190056.jpg&fm=jpg'); break;
+      case 'mississippi': 
+      case 'Mississippi,':
+      case 'Mississippi':
+        setImageState('https://images.pexels.com/photos/4320303/pexels-photo-4320303.jpeg?cs=srgb&dl=pexels-josh-hild-4320303.jpg&fm=jpg'); break;
+      case 'missouri': 
+      case 'Missouri,':
+      case 'Missouri':
+        setImageState('https://images.pexels.com/photos/5147543/pexels-photo-5147543.jpeg?cs=srgb&dl=pexels-michael-gattorna-5147543.jpg&fm=jpg'); break;
+      case 'montana': 
+      case 'Montana,':
+      case 'Montana':
+        setImageState('https://images.pexels.com/photos/534398/pexels-photo-534398.jpeg?cs=srgb&dl=pexels-kerry-534398.jpg&fm=jpg'); break;
+      case 'nebraska': 
+      case 'Nebraska,':
+      case 'Nebraska':
+        setImageState('https://images.pexels.com/photos/776614/pexels-photo-776614.jpeg?cs=srgb&dl=pexels-tonya-kumpula-776614.jpg&fm=jpg'); break;
+      case 'nevada': 
+      case 'Nevada,':
+      case 'Nevada':
+        setImageState('https://images.pexels.com/photos/258118/pexels-photo-258118.jpeg?cs=srgb&dl=pexels-pixabay-258118.jpg&fm=jpg'); break;
+      case 'hampshire': 
+      case 'Hampshire,':
+      case 'Hampshire':
+        setImageState('https://images.pexels.com/photos/2089977/pexels-photo-2089977.jpeg?cs=srgb&dl=pexels-leah-kelley-2089977.jpg&fm=jpg'); break;
+      case 'jersey': 
+      case 'Jersey,':
+      case 'Jersey':
+        setImageState('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?cs=srgb&dl=pexels-quintin-gellar-313782.jpg&fm=jpg'); break;
+      case 'mexico': 
+      case 'Mexico,':
+      case 'Mexico':
+        setImageState('https://images.pexels.com/photos/2440079/pexels-photo-2440079.jpeg?cs=srgb&dl=pexels-ian-beckley-2440079.jpg&fm=jpg'); break;
+      case 'york': 
+      case 'York,':
+      case 'York':
+        setImageState('https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?cs=srgb&dl=pexels-roberto-vivancos-2190283.jpg&fm=jpg'); break;
+      case 'carolina': 
+      case 'Carolina,':
+      case 'Carolina':
+        setImageState('https://images.pexels.com/photos/733162/pexels-photo-733162.jpeg?cs=srgb&dl=pexels-iconcom-733162.jpg&fm=jpg'); break;
+      case 'ohio': 
+      case 'Ohio,':
+      case 'Ohio':
+        setImageState('https://images.pexels.com/photos/290120/pexels-photo-290120.jpeg?cs=srgb&dl=pexels-pixabay-290120.jpg&fm=jpg'); break;
+      case 'oklahoma': 
+      case 'Oklahoma,':
+      case 'Oklahoma':
+        setImageState('https://images.pexels.com/photos/4814534/pexels-photo-4814534.jpeg?cs=srgb&dl=pexels-raychel-sanner-4814534.jpg&fm=jpg'); break;
+      case 'oregon': 
+      case 'Oregon,':
+      case 'Oregon':
+        setImageState('https://images.pexels.com/photos/2291427/pexels-photo-2291427.jpeg?cs=srgb&dl=pexels-elijah-akala-2291427.jpg&fm=jpg'); break;
+      case 'pennsylvania': 
+      case 'Pennsylvania,':
+      case 'Pennsylvania':
+        setImageState('https://images.pexels.com/photos/4642501/pexels-photo-4642501.jpeg?cs=srgb&dl=pexels-kelly-lacy-4642501.jpg&fm=jpg'); break;
+      case 'dakota': 
+      case 'Dakota,':
+      case 'Dakota':
+        setImageState('https://images.pexels.com/photos/4194067/pexels-photo-4194067.jpeg?cs=srgb&dl=pexels-samuel-karle-4194067.jpg&fm=jpg'); break;
+      case 'tennessee': 
+      case 'Tennessee,':
+      case 'Tennessee':
+        setImageState('https://images.pexels.com/photos/2350459/pexels-photo-2350459.jpeg?cs=srgb&dl=pexels-kelly-lacy-2350459.jpg&fm=jpg'); break;
+      case 'texas': 
+      case 'Texas,':
+      case 'Texas':
+        setImageState('https://images.unsplash.com/photo-1586794000129-536f1bc43cca?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'); break;
+      case 'utah': 
+      case 'Utah,':
+      case 'Utah':
+        setImageState('https://images.pexels.com/photos/62600/pexels-photo-62600.jpeg?cs=srgb&dl=pexels-chris-janda-62600.jpg&fm=jpg'); break;
+      case 'vermont': 
+      case 'Vermont,':
+      case 'Vermont':
+        setImageState('https://images.pexels.com/photos/189243/pexels-photo-189243.jpeg?cs=srgb&dl=pexels-william-alexander-189243.jpg&fm=jpg'); break;
+      case 'virginia': 
+      case 'Virginia,':
+      case 'Virginia':
+        setImageState('https://images.pexels.com/photos/5692812/pexels-photo-5692812.jpeg?cs=srgb&dl=pexels-bryant%27s-juarez-5692812.jpg&fm=jpg'); break;
+      case 'washington': 
+      case 'Washington,':
+      case 'Washington':
+        setImageState('https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?cs=srgb&dl=pexels-chait-goli-1796730.jpg&fm=jpg'); break;
+      case 'wisconsin': 
+      case 'Wisconsin,':
+      case 'Wisconsin':
+        setImageState('https://images.pexels.com/photos/4557960/pexels-photo-4557960.jpeg?cs=srgb&dl=pexels-todd-trapani-4557960.jpg&fm=jpg'); break;
+      case 'wyoming': 
+      case 'Wyoming,':
+      case 'Wyoming':
+        setImageState('https://images.pexels.com/photos/4227153/pexels-photo-4227153.jpeg?cs=srgb&dl=pexels-todd-trapani-4227153.jpg&fm=jpg'); break;
       default:
         setImageState(null)
     }
