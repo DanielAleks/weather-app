@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 import './hourly-desktop.sass'
 
-function
-  HourlyDesktop({ weatherForecast }) {
+function HourlyDesktop({ weatherForecast }) {
+  const [x, setX] = useState(2)
 
   const time = [
     '12AM', '1AM', '2AM', '3AM', '4AM', '5AM',
@@ -13,16 +13,30 @@ function
     '6PM', '7PM', '8PM', '9PM', '10PM', '11PM'
   ]
 
+  const onRightHandler = () =>
+    x < -60 ? setX(x) : setX(x - 10)
+  const onLeftHandler = () =>
+    x > 0 ? setX(x) : setX(x + 10)
+
   return (
     <div className='hourlyD-container'>
       <div className='hourlyD-bg' />
 
       <div className='hourly-huge-arrows'>
-        <FaArrowAltCircleLeft className='back-arrow' size={50} color='#F1C502' />
-        <FaArrowAltCircleRight className='forward-arrow' size={50} color='#F1C502' />
+        <FaArrowAltCircleLeft className='back-arrow'
+          size={80} color='#F1C502'
+          onClick={onLeftHandler} 
+        />
+        <FaArrowAltCircleRight className='forward-arrow'
+          size={80} color='#F1C502'
+          onClick={onRightHandler}
+        />
       </div>
+      <hr style={{width: '100%', position: 'absolute', top: '5.5rem'}} color='white' />
 
-      <div className='hourlyD-outer-container'>
+      <div className='hourlyD-outer-container'
+        style={{ transition: 'transform 1s' ,transform: `translateX(${x}%)` }}
+      >
         {weatherForecast && weatherForecast[0]?.hour.map((item, id) =>
           <div className='hourlyD-inner-container'>
             <p className='D-time'>{time[id]}</p>
@@ -32,7 +46,6 @@ function
           </div>
         )}
       </div>
-
     </div>
   )
 }

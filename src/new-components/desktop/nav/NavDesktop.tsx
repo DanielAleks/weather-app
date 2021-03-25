@@ -26,10 +26,6 @@ function NavDesktop({ isModal, setIsModal, city, setCity, weather, area, whichIm
     whichImage()
   }, [city])
 
-
-
-
-
   return (
     <div className='navD'>
 
@@ -37,7 +33,7 @@ function NavDesktop({ isModal, setIsModal, city, setCity, weather, area, whichIm
         <p className='error-length'>not enough letters</p>}
       <input
         type="text"
-        value={city}
+        value={city} 
         ref={inputRef}
         onClick={() => setIsModal(true)}
         className='long-input'
