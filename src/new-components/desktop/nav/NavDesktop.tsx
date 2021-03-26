@@ -33,13 +33,14 @@ function NavDesktop({ isModal, setIsModal, city, setCity, weather, area, whichIm
         <p className='error-length'>not enough letters</p>}
       <input
         type="text"
-        value={city} 
+        value={city}
         ref={inputRef}
         onClick={() => setIsModal(true)}
         className='long-input'
         placeholder='Search a Location'
-        onChange={(e) => setCity(e.target.value)}
-      />
+        onChange={(e) => {
+          setCity(e.target.value)
+        }} />
       <button ref={buttonRef} onClick={() => {
         weather()
         setIsModal(false)

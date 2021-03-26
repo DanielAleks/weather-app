@@ -69,22 +69,22 @@ function Index({ city, setCity, imageState, whichImage }) {
     setWeatherForecast(data.forecast && data.forecast.forecastday)
   }
 
+useEffect(() => {
+  weather()
+  places()
+  weatherForcast()
+  whichImage()
+}, [city])
+
   useEffect(() => {
     accessorLimits()
   }, [accessor])
-
-  useEffect(() => {
-    weather()
-    places()
-    weatherForcast()
-    whichImage()
-  }, [city])
 
   return (
     <div className='project-container'>
       <div className='bg-main-index' >
 
-        <img className='dynamic-image' src={imageState} alt="image-failed" />
+        <img className='dynamic-image' src={imageState} />
 
         <TopInfo
           weatherLocation={weatherLocation}

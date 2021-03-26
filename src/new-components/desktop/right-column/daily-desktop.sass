@@ -5,6 +5,8 @@
   position: absolute
   backdrop-filter: blur(5px)
   right: 0px
+  animation: slide-left 1.5s forwards .3s
+  opacity: 0
 
 .dailyD-bg
   background: rgba(0, 0, 0, .3)
@@ -12,3 +14,11 @@
   width: 100%
   position: absolute
   z-index: -1
+
+@keyframes slide-left
+  0%
+    opacity: 0
+    transform: translateX(200px)
+  100%
+    opacity: 1
+    transform: translateX(0px)

@@ -6,6 +6,16 @@
   display: flex
   backdrop-filter: blur(5px)
   align-items: center
+  opacity: 0
+  animation: slide-up 2s forwards
+
+@keyframes slide-up
+  0%
+    opacity: 0
+    transform: translateY(200px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
 
 .hourlyD-bg
   background: rgb(56, 56, 56)
@@ -32,10 +42,21 @@
   position: absolute
   top: 7rem
   left: 7rem
+  opacity: 0
+  animation: fade-in 1s forwards 1.5s
+
 .forward-arrow
   position: absolute
   top: 7rem
   right: 7rem
+  opacity: 0
+  animation: fade-in 1s forwards 1.5s
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
 
 .D-time
   font-size: 1.5rem

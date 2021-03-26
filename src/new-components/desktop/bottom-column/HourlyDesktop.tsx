@@ -4,7 +4,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 import './hourly-desktop.sass'
 
 function HourlyDesktop({ weatherForecast }) {
-  const [x, setX] = useState(2)
+  const [x, setX] = useState(-35)
 
   const time = [
     '12AM', '1AM', '2AM', '3AM', '4AM', '5AM',
@@ -14,7 +14,7 @@ function HourlyDesktop({ weatherForecast }) {
   ]
 
   const onRightHandler = () =>
-    x < -60 ? setX(x) : setX(x - 10)
+    x < -70 ? setX(x) : setX(x - 10)
   const onLeftHandler = () =>
     x > 0 ? setX(x) : setX(x + 10)
 

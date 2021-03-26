@@ -6,9 +6,16 @@ function Daily({ weatherForecast, accessor, setAccessor }) {
   return (
     <div className="daily-container">
       <div className='daily-header'>
-        <p className='daily-date'>{weatherForecast && weatherForecast[accessor]?.date}</p>
-        <img src={weatherForecast && weatherForecast[accessor]?.day.condition.icon} className='day-icon' alt="icon" />
-        <p className='daily-desc'>{weatherForecast && weatherForecast[accessor]?.day.condition.text}</p>
+        <p className='daily-date'>
+          {weatherForecast && weatherForecast[accessor]?.date}
+        </p>
+        <img
+          className='day-icon' alt="icon"
+          src={weatherForecast && weatherForecast[accessor]?.day.condition.icon}
+        />
+        <p className='daily-desc'>
+          {weatherForecast && weatherForecast[accessor]?.day.condition.text}
+        </p>
       </div>
 
       <DailyInfo
