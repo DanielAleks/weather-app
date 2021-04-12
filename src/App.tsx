@@ -5,7 +5,7 @@ import './style.sass'
 import loadImages from './LoadImages';
 
 function App() {
-  const [city, setCity]: any = useState('Afghanistan')
+  const [city, setCity]: any = useState('Japan, East Java, Indonesia')
   const [imageState, setImageState] = useState('')
 
   const cityUSAHandler = () => {
